@@ -1,0 +1,19 @@
+{exp:channel:entries channel="work|create|blog|skills|gallery" limit="1" url_title="{segment_3}"}
+{!-- <title>{if layout:title != ''}{layout:title} | {/if}{site_name}</title>--}
+<title>{site_name} | {url_title}</title>
+{!-- Twitter card type --}
+<meta name="twitter:card" content="summary">
+{!-- Twitter username --}
+<meta name="twitter:site" content="@twitterusername">
+{!-- Open Graph type --}
+<meta property="og:type" content="article">
+{!-- Title taken from the Entry Title --}
+<meta property="og:title" content="{title}">
+{!-- Description --}
+<meta property="og:description" content="{exp:tagstripper:tagsToSave tags=""}{exp:trunchtml chars="150" inline="..."}{if segment_1 == "create"}{create_content}{/if}
+{if segment_1 == "work"}{work_content}{/if}{if segment_1 == "blog"}{blog_content}{/if}{if segment_1 == "skills"}{blog_content}{/if}{/exp:trunchtml}{/exp:tagstripper:tagsToSave}">
+{!-- Image --}
+<meta property="og:image" content="{exp:channel_images:images entry_id="{entry_id}" limit="1"}{image:url:medium}{/exp:channel_images:images}">
+{!-- URL --}
+<meta property="og:url" content="{site_url}{segment_1}/{segment_2}/{url_title}">
+{/exp:channel:entries} 

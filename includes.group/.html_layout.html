@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	
+	
+
+{if segment_1 == ''}
+   <title>{site_name}</title>
+         <meta name="description" content="Penworks.net is the portfolio and project site for Pen Lister. ">
+         <meta name="author" content="Pen Lister">
+            <meta property="og:title" content="{site_name}">
+        <meta property="og:image" content="{img_url_prefix}p1080527__medium.jpg">
+            <meta property="og:description" content="Penworks.net is the portfolio and project site for Pen Lister.">
+                <meta property="og:url" content="http://www.penworks.net">
+{/if}
+{if segment_1 == 'create'}
+    {embed='includes/.meta'}
+{/if}
+{if segment_1 == 'work'}
+    {embed='includes/.meta'}
+{/if}
+{if segment_1 == 'skills'}
+    {embed='includes/.meta'}
+{/if}
+{if segment_1 == 'blog'}
+    {embed='includes/.meta'}
+{/if}
+
+
+{!--{embed='includes/.meta'}--}
+         
+         {!-- {companyname} - {embed:my_page_title}--}
+         
+                
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="{skel_css}boilerplate/stylesheets/base.css">
+	<link rel="stylesheet" href="{skel_css}boilerplate/stylesheets/skeleton.css">
+	<link rel="stylesheet" href="{skel_css}boilerplate/stylesheets/layout.css">
+		
+	<!-- PENWORKS CSS	
+  ================================================== -->
+	<link rel="stylesheet" href="{skel_css}mainstyles.css">
+            <!--grunt uglify and add as partial to mainstyles!-->
+            {embed="includes/.vendor-css"}
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+                
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="{skel_css}boilerplate/images/favicon.ico">
+	<link rel="apple-touch-icon" href="{skel_css}boilerplate/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="{skel_css}/boilerplate/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="{skel_css}/boilerplate/images/apple-touch-icon-114x114.png">
+		
+
+</head>
+<body>
+    
+    
+    
+     <!-- Header
+================================================== -->
+
+<header class="sixteen columns menu-header">
+	
+	<div class="sixteen columns container">
+			<a href="{site_url}"><img src="{skel-styles-images}penworks-favicon.png" alt="{title}" class="logotop" /></a>
+                        
+                        
+                       <div class="holder">
+                        
+                              <div class="strap"><h1 class="remove-bottom header-h1">Penworks.net</h1>
+		       <h5>Pen Lister: Internet Gardener</h5> </div>
+         
+                      
+                       <a class="menu-link" href="#menu">menu</a>
+			
+                        <nav class="menu" id="menu"><ul class="menu-wide">
+<li class="active icon-creative"><a href="{path=create}"><i class="fa fa-image"></i> Creative</a></li>
+<li class="icon-work"><a href="{path=work}"><i class="fa fa-cubes"></i> Work</a></li>
+<li class="icon-skills"><a href="{path=skills}"><i class="fa fa-cogs"></i> Skills</a></li>
+<li class="icon-blog"><a href="{path=blog}"><i class="fa fa-paper-plane"></i> Blog</a></li>      
+<!--  <li class="icon-gallery"><a href="{path=gallery}">Photography</a></li>-->
+</ul>
+</nav>
+                        
+                        
+                        
+                       </div>{!--/holder--}
+			
+                        
+                   
+                   
+			
+		</div>{!--/sixteen columns container remove-all-margins--}
+			
+</header>
+
+			
+	<div class="container">
+
+        
+        
+
+     <!-- Content!
+================================================== -->
+
+    
+    {layout:contents}
+ 
+
+    <!-- Footer 
+================================================== -->    
+
+	<div class="sixteen columns add-top add-bottom">
+	
+            <footer class="mainfooter">
+                    
+                <p class="footer-links">Pen Lister {letters} - {skype} | <a href="{twitter}">on Twitter</a> | <a href="{facebook_penworks}">on Facebook</a>  |  <a href="{linkedin}">on LinkedIn</a> &copy; 2015 {companyname}</p>
+                        
+               <em>This site is built using <a href="http://ellislab.com">ExpressionEngine &reg;</a>, <a href="http://getskeleton.com/">Skeleton</a>, <a href="http://diveintohtml5.info/">HTML5</a>, a little <a href="http://www.integralist.co.uk/posts/sass.html">Sassy CSS</a>, <a href="http://jquery.com/">jQuery</a>, and is nicely <a href="http://en.wikipedia.org/wiki/Responsive_web_design">responsive</a>, for all <a href="http://browsehappy.com/">modern browsers</a>. No Adobe products were used in the making of this site &#9786;</em>. Special thanks to <a href="http://www.blue-dreamer.co.uk">Blue Dreamer</a> and <a href="http://paulstamatiou.com/">Stammy</a> for inspiration and a ton of knowledge.
+                            
+            </footer>
+
+	</div><!--/.sixteen columns-->
+	
+	</div><!-- container -->
+
+  
+    
+    <!-- HTML Footer
+================================================== -->
+
+
+	<!-- LOAD CDN JQUERY	
+  ================================================== -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>-->
+    <!--<script type="text/javascript" src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>-->   
+        <script type="text/javascript" src="{skel_js}imagesloaded.pkgd.min.js"></script>
+        <script type="text/javascript" src="{skel_js}masonry.pkgd.min.js"></script>
+        <script type="text/javascript" src="{skel_js}jquery.easing.min.js"></script>
+        <script type="text/javascript" src="{skel_js}jquery.magnific.min.js"></script>
+        <script  type="text/javascript" src="{skel_js}jquery.infinitescroll.js"></script>
+        <script type='text/javascript' src='{skel_js}jquery-embedagram.pack.js'></script>
+
+
+<script type="text/javascript">
+
+//Magnific html popup
+$(document).ready(function() {
+    $('.open-popup-link').magnificPopup({
+      type:'inline',
+      midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+    });
+});
+
+// Magnific gallery
+   $(document).ready(function() {
+        $('.popup-gallery').magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          tLoading: 'Loading image #%curr%...',
+          mainClass: 'mfp-img-mobile',
+          gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+          },
+          image: {
+            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            titleSrc: function(item)
+            {
+              return item.el.attr('title') + ' <i class="fa fa-chevron-circle-right"></i> ' + item.el.attr('alt') + '<small>by Pen Lister</small>';
+            }
+          }
+        });
+      });
+   
+//Magnific Form
+
+$(document).ready(function() {
+	$('.popup-with-form').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		focus: '#name',
+
+		// When elemened is focused, some mobile browsers in some cases zoom in
+		// It looks not nice, so we disable it:
+		callbacks: {
+			beforeOpen: function() {
+				if($(window).width() < 700) {
+					this.st.focus = false;
+				} else {
+					this.st.focus = '#name';
+				}
+			}
+		}
+	});
+});
+
+//Responsive Toggle Menu
+jQuery(document).ready(function($) {
+
+	var $menu = $('#menu'),
+	  $menulink = $('.menu-link'),
+	  $menuTrigger = $('.has-submenu > a');
+
+	$menulink.click(function(e) {
+		e.preventDefault();
+		$menulink.toggleClass('active');
+		$menu.toggleClass('active');
+	});
+
+	$menuTrigger.click(function(e) {
+		e.preventDefault();
+		var $this = $(this);
+		$this.toggleClass('active').next('ul').toggleClass('active');
+	});
+
+});
+
+//Active menu state
+       jQuery(function($){
+       var str=location.href.toLowerCase();
+       $("#menu li a").each(function() {
+       if (str.indexOf(this.href.toLowerCase()) > -1) {
+         $("li.active").removeClass("active");
+       $(this).parent().addClass("active");
+       }
+        });
+        });
+            
+//Masonry      
+    var $container = $('#masonry-box');
+  $container.imagesLoaded(function(){
+    $container.masonry({
+      itemSelector : '.item',
+     // columnWidth : 500
+  });
+});
+  
+//Infinite scroll
+var $container = $('#masonry-box');
+	$container.infinitescroll({
+		navSelector  : 'div.pagination', 
+		nextSelector : 'div.pagination a.older',
+		itemSelector : '.item',
+		loading: {
+			finishedMsg: "<div class=\"scroll-end\">No more posts here :(</div>",
+			img: "{skel_css}img/ajax-loader.gif",
+			msgText: "<em>Loading more posts...</em>"
+		},
+		animate      : true, 
+		extraScrollPx: 150,
+                bufferPx : 40,
+		extractLink: true,
+              //  speed: 400,
+
+    pathParse: function() {
+        return ['{path={segment_1}}entry/P','']
+    },
+		debug: true,
+		errorCallback: function() { 
+			// fade out the error message after 2 seconds
+			$('#infscr-loading').animate({opacity: .8},3000).fadeOut('normal');   
+		}
+		},
+		// Call Masonry as a callback  -  Uncomment for use
+		
+function( newElements ) {
+			 var $newElems = $( newElements ); 
+			$(this).masonry( 'appended', $newElems );
+		}
+
+	);  
+
+/*  var parameters = JSON.parse('{"top":"200px"}');
+console.log(parameters);
+$("#scroll-end").animate(parameters,10);  */    
+        
+        
+        
+        
+        
+//Embedagram
+  jQuery(function($){
+    $('#slideshow').embedagram({
+	    instagram_id: 386238952,
+ //  success: function (){ $('#slideshow').animate({height: "show", width: "show"},1500, "swing") }, 
+   limit: 18
+});
+});
+  
+  //fluid video
+  $(function() {
+    
+    var $allVideos = $("iframe[src^='http://player.vimeo.com'], iframe[src^='http://www.youtube.com'], object, embed"),
+    $fluidEl = $("figure");
+	    	
+	$allVideos.each(function() {
+	
+	  $(this)
+	    // jQuery .data does not work on object/embed elements
+	    .attr('data-aspectRatio', this.height / this.width)
+	    .removeAttr('height')
+	    .removeAttr('width');
+	
+	});
+	
+	$(window).resize(function() {
+	
+	  var newWidth = $fluidEl.width();
+	  $allVideos.each(function() {
+	  
+	    var $el = $(this);
+	    $el
+	        .width(newWidth)
+	        .height(newWidth * $el.attr('data-aspectRatio'));
+	  
+	  });
+	
+	}).resize();
+
+});
+ 
+</script>
+
+{google_analytics}
+
+</body>
+
+</html>

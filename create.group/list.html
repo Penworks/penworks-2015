@@ -1,0 +1,45 @@
+{layout="includes/.html_layout"}
+
+
+
+	<div class="sixteen columns top-margin">		
+			<h2 class="remove-bottom">Creative Projects</h2>
+			<h5>Working on things I don't always get paid for ;)</h5>
+			<hr />
+	</div><!--/.sixteen column-->		
+
+	
+	{exp:channel:entries channel="create" limit="1" disable="member_data|trackbacks" orderby="date"}
+	
+	<div id="masonry-box">
+		
+		<div class="eight columns item">
+			<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>	
+			
+			{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
+			<img src="{image:url:medium}" />
+			{/exp:channel_images:images}
+			{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=create/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{create_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+		</div><!--/.eight columns-->
+		
+	{/exp:channel:entries}
+	
+	
+	{exp:channel:entries channel="create" limit="10" disable="member_data|trackbacks" sort="desc" offset="1"}
+		
+		<div class="eight columns item">	
+			<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>
+			
+			{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
+			<img src="{image:url:small-rec}" title="#{image:id}" /> 	
+			{/exp:channel_images:images}
+			{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=create/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{create_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+		</div><!--/.eight columns-->
+
+	{/exp:channel:entries}
+	
+	
+	</div><!--/#masonry-box-->
+	
+
+

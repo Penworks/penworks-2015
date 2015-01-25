@@ -1,0 +1,58 @@
+{embed="includes/head" my_page_title="search"}
+</head>
+<body>
+{embed="includes/header"}
+
+<article>	
+
+<h3>Search results: &nbsp; <small> {exp:search:total_results} &nbsp; results &nbsp; for &nbsp; "{exp:search:keywords}"</small></h3>
+
+	{exp:search:search_results}
+
+	<section class="intro">
+			
+		<div class="intro-summary">
+			
+		{if channel_name== "resume"}
+			
+			{blog_image limit="1"}<a href="{title_permalink=resume/entry}"><img src="{image:url:small}" alt="{title}" /></a>{/blog_image}
+			<h3>{title}</h3>
+			{exp:trunchtml chars="100" inline="..." ending="<a class='readmore' href='{title_permalink=blog/entry}'>read more</a>"}{exp:tagstripper:tagsToStrip tags="img"}{blog_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+		</div><!--/.intro_summary-->
+		</section>
+
+		{if:elseif channel_name== "create"}
+			 
+			{create_image limit="1"}<a href="{title_permalink=create/entry}"><img src="{image:url:small}" alt="{title}" /></a>{/create_image}
+			<h3>{title}</h3>
+			{exp:trunchtml chars="100" inline="..." ending="<a class='readmore' href='{title_permalink=create/entry}'>read more</a>"}{exp:tagstripper:tagsToStrip tags="img"}{create_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+		</div><!--/.intro_summary-->
+		</section>
+			
+		{if:elseif channel_name== "work"}
+
+			{work_image limit="1"}<a href="{title_permalink=work/entry}"><img src="{image:url:small}" alt="{title}" /></a>{/work_image}
+			<h3>{title}</h3>
+			{exp:trunchtml chars="100" inline="..." ending="<a class='readmore' href='{title_permalink=work/entry}'>read more</a>"}{exp:tagstripper:tagsToStrip tags="img"}{work_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+		</div><!--/.intro_summary-->
+		</section>
+			
+		{if:else}
+		
+			{blog_image limit="1"}<a href="{title_permalink=blog/entry}"><img src="{image:url:small}" alt="{title}" /></a>{/blog_image}
+			<h3>{title}</h3>	
+			{exp:trunchtml chars="100" inline="..." ending="<a class='readmore' href='{title_permalink=blog/entry}'>read more</a>"}{exp:tagstripper:tagsToStrip tags="img"}{blog_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+		</div><!--/.intro_summary-->
+		</section>
+			
+		{/if}
+			
+	{/exp:search:search_results}		
+
+			
+</article>
+
+{embed="includes/footer"}
+{embed="includes/analytics"}
+</body>
+</html>

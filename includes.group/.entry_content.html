@@ -1,0 +1,324 @@
+
+     <!-- Entry Content for all channels
+================================================== -->
+
+<div class="sixteen columns top-margin">
+
+
+{if segment_1 == "create"}
+
+{exp:channel:entries channel="create" limit="1" disable="member_data|trackbacks"}		
+    	<div class="fifteen columns offset-by-one">
+              
+	<h2 class="title">{title}</h2>
+	<!--display video if present-->
+	{if create_video}
+        
+        <div class="videoWrapper">
+	{exp:channel_videos:videos entry_id="{entry_id}"  class="video-embed"}
+	{video:embed_code}
+        </div>
+	{/exp:channel_videos:videos}
+        
+        <!--display text content-->
+        <br class="clear" />
+	<p>{create_content}</p>
+	
+
+        <div class="popup-gallery image-gal">
+     
+      {exp:channel_images:images entry_id="{entry_id}"}     
+        <a href="{image:url:very-large}" title="{image:title}" alt="{image:description}"><img src="{image:url:small}" title="{image:title}" alt="{image:description}" class="image-gal-img" /></a>
+      {/exp:channel_images:images}
+                   
+       </div>
+        
+
+	{if:else}
+	
+	<!--display a large image if video is not present-->
+        <div class="image-entry">
+        {exp:channel_images:images entry_id="{entry_id}" cover_only="yes"}
+        
+        <a><img src="{image:url:large}" /></a>  
+        <div class="image-credit-hover">{image:title} | {image:description}
+        </div>
+        {/exp:channel_images:images}
+        </div>
+        
+        
+        <!--display text content-->
+        <br class="clear" />
+	<p>{create_content}</p>
+        
+        <div class="popup-gallery image-gal">
+        {exp:channel_images:images entry_id="{entry_id}"}       {if image:count > "1"}
+        <a href="{image:url:very-large}" title="{image:title}" alt="{image:description}"><img src="{image:url:small}" title="{image:title}" alt="{image:description}" style="width: 100px;height: 100px"/></a>   {/if}
+        {/exp:channel_images:images}
+        </div>
+        
+	
+	{/if}
+	
+	<div class="posted">	
+	Posted by {author} on {entry_date format='%m/%d/%y'} at {entry_date format='%h:%i %a'}
+	<br>
+	{categories}
+	<a href="{path='create/'}">{category_name}</a> &#8226;
+	{/categories}	
+	<a href="{title_permalink='create/entry/'}">Permalink</a>		
+	</div><!--/posted-->
+        
+{/exp:channel:entries}
+		
+	<div class="paginate-entry">
+	&larr; <a href="{path=create}">Back to Creative</a>{exp:channel:prev_entry channel="create" backspace="1"} | Previous: <a href="{path=create/entry}">{title}</a> {/exp:channel:prev_entry} {exp:channel:next_entry channel="create" backspace=""} | Next: <a href="{path=create/entry}">{title}</a> &rarr; {/exp:channel:next_entry}
+	</div><!--/paginate-entry-->
+        
+	
+	</div><!--/fifteen columns offset-by-one-->
+
+</div><!--/sixteen columns top-margin-->
+
+{/if}
+
+
+{if segment_1 == "work"}
+
+
+{exp:channel:entries channel="work" limit="1" disable="member_data|trackbacks"}		
+    	<div class="fifteen columns offset-by-one">
+              
+	<h2 class="title">{title}</h2>
+	<!--display video if present-->
+	{if work_video}
+        
+        <div class="videoWrapper">
+	{exp:channel_videos:videos entry_id="{entry_id}"  class="video-embed"}
+	{video:embed_code}
+        </div>
+	{/exp:channel_videos:videos}
+        
+        <!--display text content-->
+        <br class="clear" />
+	<p>{work_content}</p>
+	
+
+        <div class="popup-gallery image-gal">
+     
+      {exp:channel_images:images entry_id="{entry_id}"}     
+        <a href="{image:url:very-large}" title="{image:title}" alt="{image:description}"><img src="{image:url:small}" title="{image:title}" alt="{image:description}" class="image-gal-img" /></a>
+      {/exp:channel_images:images}
+                   
+       </div>
+        
+
+	{if:else}
+	
+	<!--display a large image if video is not present-->
+        <div class="image-entry">
+        {exp:channel_images:images entry_id="{entry_id}" cover_only="yes"}
+        
+        <a><img src="{image:url:large}" /></a>  
+        <div class="image-credit-hover">{image:title} | {image:description}
+        </div>
+        {/exp:channel_images:images}
+        </div>
+        
+        
+        <!--display text content-->
+        <br class="clear" />
+	<p>{work_content}</p>
+        
+        <div class="popup-gallery image-gal">
+        {exp:channel_images:images entry_id="{entry_id}"}       {if image:count > "1"}
+        <a href="{image:url:very-large}" title="{image:title}" alt="{image:description}"><img src="{image:url:small}" title="{image:title}" alt="{image:description}" style="width: 100px;height: 100px"/></a>   {/if}
+        {/exp:channel_images:images}
+        </div>
+        
+	
+	{/if}
+	
+	<div class="posted">	
+	Posted by {author} on {entry_date format='%m/%d/%y'} at {entry_date format='%h:%i %a'}
+	<br>
+	{categories}
+	<a href="{path='work/'}">{category_name}</a> &#8226;
+	{/categories}	
+	<a href="{title_permalink='work/entry/'}">Permalink</a>		
+	</div><!--/posted-->
+        
+{/exp:channel:entries}
+		
+	<div class="paginate-entry">
+	&larr; <a href="{path=work}">Back to Work</a>{exp:channel:prev_entry channel="create" backspace="1"} | Previous: <a href="{path=work/entry}">{title}</a> {/exp:channel:prev_entry} {exp:channel:next_entry channel="create" backspace=""} | Next: <a href="{path=work/entry}">{title}</a> &rarr; {/exp:channel:next_entry}
+	</div><!--/paginate-entry-->
+        
+	
+	</div><!--/fifteen columns offset-by-one-->
+
+</div><!--/sixteen columns top-margin-->
+
+{/if}
+
+
+{if segment_1 == "skills"}
+
+
+{exp:channel:entries channel="skills" limit="1" disable="member_data|trackbacks"}		
+    	<div class="fifteen columns offset-by-one">
+              
+	<h2 class="title">{title}</h2>
+	<!--display video if present-->
+	{if blog_video}
+        
+        <div class="videoWrapper">
+	{exp:channel_videos:videos entry_id="{entry_id}"  class="video-embed"}
+	{video:embed_code}
+        </div>
+	{/exp:channel_videos:videos}
+        
+        <!--display text content-->
+        <br class="clear" />
+	<p>{blog_content}</p>
+	
+
+        <div class="popup-gallery image-gal">
+     
+      {exp:channel_images:images entry_id="{entry_id}"}     
+        <a href="{image:url:very-large}" title="{image:title}" alt="{image:description}"><img src="{image:url:small}" title="{image:title}" alt="{image:description}" class="image-gal-img" /></a>
+      {/exp:channel_images:images}
+                   
+       </div>
+        
+
+	{if:else}
+	
+	<!--display a large image if video is not present-->
+        <div class="image-entry">
+        {exp:channel_images:images entry_id="{entry_id}" cover_only="yes"}
+        
+        <a><img src="{image:url:large}" /></a>  
+        <div class="image-credit-hover">{image:title} | {image:description}
+        </div>
+        {/exp:channel_images:images}
+        </div>
+        
+        
+        <!--display text content-->
+        <br class="clear" />
+	<p>{blog_content}</p>
+        
+        <div class="popup-gallery image-gal">
+        {exp:channel_images:images entry_id="{entry_id}"}       {if image:count > "1"}
+        <a href="{image:url:very-large}" title="{image:title}" alt="{image:description}"><img src="{image:url:small}" title="{image:title}" alt="{image:description}" style="width: 100px;height: 100px"/></a>   {/if}
+        {/exp:channel_images:images}
+        </div>
+        
+	
+	{/if}
+	
+	<div class="posted">	
+	Posted by {author} on {entry_date format='%m/%d/%y'} at {entry_date format='%h:%i %a'}
+	<br>
+	{categories}
+	<a href="{path='skills/'}">{category_name}</a> &#8226;
+	{/categories}	
+	<a href="{title_permalink='skills/entry/'}">Permalink</a>		
+	</div><!--/posted-->
+        
+{/exp:channel:entries}
+		
+	<div class="paginate-entry">
+	&larr; <a href="{path=skills}">Back to Skills</a>{exp:channel:prev_entry channel="skills" backspace="1"} | Previous: <a href="{path=skills/entry}">{title}</a> {/exp:channel:prev_entry} {exp:channel:next_entry channel="skills" backspace=""} | Next: <a href="{path=skills/entry}">{title}</a> &rarr; {/exp:channel:next_entry}
+	</div><!--/paginate-entry-->
+        
+	
+	</div><!--/fifteen columns offset-by-one-->
+
+</div><!--/sixteen columns top-margin-->
+
+{/if}
+
+
+{if segment_1 == "blog"}
+
+
+{exp:channel:entries channel="blog" limit="1" disable="member_data|trackbacks"}		
+    	<div class="fifteen columns offset-by-one">
+              
+	<h2 class="title">{title}</h2>
+	<!--display video if present-->
+	{if blog_video}
+        
+        <div class="videoWrapper">
+	{exp:channel_videos:videos entry_id="{entry_id}"  class="video-embed"}
+	{video:embed_code}
+        </div>
+	{/exp:channel_videos:videos}
+        
+        <!--display text content-->
+        <br class="clear" />
+	<p>{blog_content}</p>
+	
+
+        <div class="popup-gallery image-gal">
+     
+      {exp:channel_images:images entry_id="{entry_id}"}     
+        <a href="{image:url:very-large}" title="{image:title}" alt="{image:description}"><img src="{image:url:small}" title="{image:title}" alt="{image:description}" class="image-gal-img" /></a>
+      {/exp:channel_images:images}
+                   
+       </div>
+        
+
+	{if:else}
+	
+	<!--display a large image if video is not present-->
+        <div class="image-entry">
+        {exp:channel_images:images entry_id="{entry_id}" cover_only="yes"}
+        
+        <a><img src="{image:url:large}" /></a>  
+        <div class="image-credit-hover">{image:title} | {image:description}
+        </div>
+        {/exp:channel_images:images}
+        </div>
+        
+        
+        <!--display text content-->
+        <br class="clear" />
+	<p>{blog_content}</p>
+        
+        <div class="popup-gallery image-gal">
+        {exp:channel_images:images entry_id="{entry_id}"}       {if image:count > "1"}
+        <a href="{image:url:very-large}" title="{image:title}" alt="{image:description}"><img src="{image:url:small}" title="{image:title}" alt="{image:description}" style="width: 100px;height: 100px"/></a>   {/if}
+        {/exp:channel_images:images}
+        </div>
+        
+	
+	{/if}
+	
+	<div class="posted">	
+	Posted by {author} on {entry_date format='%m/%d/%y'} at {entry_date format='%h:%i %a'}
+	<br>
+	{categories}
+	<a href="{path='blog/'}">{category_name}</a> &#8226;
+	{/categories}	
+	<a href="{title_permalink='blog/entry/'}">Permalink</a>		
+	</div><!--/posted-->
+        
+{/exp:channel:entries}
+		
+	<div class="paginate-entry">
+	&larr; <a href="{path=blog}">Back to the Blog</a>{exp:channel:prev_entry channel="blog" backspace="1"} | Previous: <a href="{path=blog/entry}">{title}</a> {/exp:channel:prev_entry} {exp:channel:next_entry channel="blog" backspace=""} | Next: <a href="{path=blog/entry}">{title}</a> &rarr; {/exp:channel:next_entry}
+	</div><!--/paginate-entry-->
+        
+	
+	</div><!--/fifteen columns offset-by-one-->
+
+</div><!--/sixteen columns top-margin-->
+
+{/if}
+
+
+
+

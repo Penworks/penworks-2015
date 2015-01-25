@@ -1,0 +1,103 @@
+{embed="includes/head" my_page_title="Home"}
+</head>
+<body>
+	{embed="includes/header"}
+<!--main index template-->
+
+	{exp:channel:entries channel="some-channel-name" sort="asc" orderby="date" disable="trackbacks|member_data|pagination"}
+		dididldeee
+	{/exp:channel:entries}
+
+<article> <h3>Featured Projects</h3>
+
+<!--search:featured_item="y" search:featured_create_item="y" search:featured_work_item="y"-->
+	
+	{exp:channel:entries channel="work|create|resume|blog" limit="4" parse="inward" show_empty="no" orderby="date" disable="trackbacks|member_data|pagination"}
+	
+
+	{if sticky == 'y'}<section>
+	
+
+			<div class="entry-summary">
+
+			
+
+			{if channel_name== "resume"}
+			
+			
+			
+			{blog_image limit="1"}<a href="{image:url:large}"><img src="{image:url:small}" /></a>{/blog_image}
+			
+			<h3>{title}</h3>
+			
+			{exp:trunchtml chars="200" inline="..." ending="<a class='readmore' href='{title_permalink=blog/entry}'>read more...</a>"}{exp:tagstripper:tagsToStrip tags="img"}{blog_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+			
+			
+			
+			{if:elseif channel_name== "create"}
+			
+			
+			 
+			{create_image limit="1"}<a href="{image:url:large}"><img src="{image:url:small}" /></a>{/create_image}
+			
+			<h3>{title}</h3>
+			
+			{exp:trunchtml chars="200" inline="..." ending="<a class='readmore' href='{title_permalink=create/entry}'>read more...</a>"}{exp:tagstripper:tagsToStrip tags="img"}{create_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+			
+		
+			
+			{if:elseif channel_name== "work"}
+			
+			
+			
+				{work_image limit="1"}<a href="{image:url:large}"><img src="{image:url:small}" /></a>{/work_image}
+			
+			<h3>{title}</h3>
+	
+			{exp:trunchtml chars="120" inline="..." ending="<a class='readmore' href='{title_permalink=work/entry}'>read more...</a>"}{exp:tagstripper:tagsToStrip tags="img"}{work_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+			
+			
+
+			{if:else}
+			
+			
+					
+			{blog_image limit="1"}<a href="{image:url:large}"><img src="{image:url:small}" /></a>{/blog_image}
+			
+			<h3>{title}</h3>
+			
+			{exp:trunchtml chars="200" inline="..." ending="<a class='readmore' href='{title_permalink=blog/entry}'>read more...</a>"}{exp:tagstripper:tagsToStrip tags="img"}{blog_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+			
+		
+			{/if}
+			
+			
+			
+			
+			
+			
+			
+			</div>
+	
+	</section>{else:if sticky =='no'}
+			
+			
+			{/if}
+
+	
+	
+	{/exp:channel:entries}
+			
+
+</article>
+
+
+<aside>
+	
+</aside>
+
+
+{embed="includes/footer"}
+{embed="includes/analytics"}
+</body>
+</html>

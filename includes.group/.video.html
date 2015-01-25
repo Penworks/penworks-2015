@@ -1,0 +1,39 @@
+     <!-- VIDEO for all channels
+================================================== -->
+
+
+{!--         IF CREATE VIDEO  --}
+	{if create_video}
+        <div class="videoWrapper">
+	{exp:channel_videos:videos entry_id="{entry_id}"  class="video-embed"}
+	{video:embed_code}
+        </div>
+	{/exp:channel_videos:videos}
+        {/if}
+        
+{!--         IF WORK VIDEO  --}
+	{if work_video}
+        <div class="videoWrapper">
+	{exp:channel_videos:videos entry_id="{entry_id}"  class="video-embed"}
+	{video:embed_code}
+        </div>
+	{/exp:channel_videos:videos}
+        {/if}
+        
+{!--         IF RESUME VIDEO  --}
+	{if resume_video}
+        <div class="videoWrapper">
+	{exp:channel_videos:videos entry_id="{entry_id}"  class="video-embed"}
+	{video:embed_code}
+        </div>
+	{/exp:channel_videos:videos}
+        {/if}
+
+{!--         IF BLOG VIDEO  --}
+	{if blog_video}
+        <div class="videoWrapper">
+	{exp:channel_videos:videos entry_id="{entry_id}"  class="video-embed"}
+	{video:embed_code}
+        </div>
+	{/exp:channel_videos:videos}
+        {/if}

@@ -1,0 +1,627 @@
+// Pen Lister. v2.0 ematrix sass styles 12/1/15
+/*NOTE for font compile rules:
+
+p.ex1 {
+    font: 15px arial, sans-serif;
+}
+
+p.ex2 {
+    font: italic bold 12px/30px Georgia, serif;
+}
+*/
+
+
+
+/*
+ EXTEND /Inheritance
+========================================== */
+
+/*see menu links example*/
+
+
+/*
+ OPERATORS - doing maths in css +,_ /,*, % 
+ ========================================== */
+
+/*.container { width: 100%; }
+
+article[role="main"] {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside[role="complimentary"] {
+  float: right;
+  width: 300px / 960px * 100%;
+}*/
+
+
+
+/*
+ PARTIALS and url imports
+========================================== */
+//@import '_partial';
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic|News+Cycle:400,700|Khand:400,700|Oswald:400,700);
+
+
+
+/*
+ MIXINS
+ ========================================== */
+
+@mixin ff-fix-header {
+    -moz-transform: scale(1); 
+    -moz-transform-origin: 0 0;
+}
+
+@mixin box-sizing {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin custom-counter {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+@mixin custom-counter-li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+}
+
+@mixin custom-counter-li-before {
+  content: counter(step-counter);
+  margin-right: 5px;
+  font-size: 80%;
+  background-color: rgb(179, 200, 16);
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  @include border-radius(3px);
+}
+
+@mixin web-transition-size {
+    -webkit-transition: width 3s ease, height 3s ease;
+    -moz-transition: width 3s ease, height 3s ease;
+    -o-transition: width 3s ease, height 3s ease;
+    transition: width 3s ease, height 3s ease;
+    }
+    
+@mixin box-shadow-dark {
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+@mixin box-shadow-light {
+    box-shadow: 0 0 10px rgba(210, 214, 217, 0.3);
+}
+
+
+@mixin entry-list {
+  display:block;
+  list-style:square inside;
+  line-height: normal;
+  padding-left:20px;
+  border-left:$border-7-olive;
+}
+
+@mixin image-entry{
+    padding:0px;
+    float:left;
+    margin:0 auto;
+    position: relative;
+    overflow:hidden;
+}
+
+@mixin image-credit-hover {
+    background: rgb(248, 78, 45);
+    background: rgba(248, 78, 45, 0.6);
+    max-width: 100%;
+    height:25px;
+    padding:20px 20px 50px 20px;
+    position: absolute;
+    top:30px;
+    left:20px;
+    color:#fff;
+    display:none;
+    font: 1.0em 'Oswald', sans-serif;
+}
+
+@mixin entry-list-hover {
+    z-index: 200;
+    background: rgb(17,45,48);
+    background: rgba(17,45,48,0.6);   
+    max-width: 450px;
+    max-height:400px;
+    padding:30px 30px 50px 30px;
+    overflow:hidden;
+    position: absolute;
+    bottom:-10px;
+    left:200px;
+    color:#000;
+    display:none;
+    font: 1.0em 'Oswald', sans-serif;
+    @include border-radius(3px);
+}
+
+@mixin popupoverlay{
+ box-shadow: 0 0 10px rgba(0,0,0,0.3);
+ width:auto;
+ height:auto;
+ display:none;
+ margin:1em;
+ background:#000;
+ padding-left:7px;
+}
+
+@mixin top-head-menu {
+    margin-right: 5px;
+    font-size: 80%;
+    background-color: rgb(57, 72, 16);
+    color: rgb(254, 138, 19);  
+    font-weight: bold;
+    padding: 3px 8px;
+    @include border-radius(3px);
+}
+
+
+/*
+VARIABLES
+========================================== */
+
+//dev variables - to show div borders and layout when needed
+$divborder: 1px solid red;
+$divwidth: 98%;
+
+//body font variables inc Google fonts
+$gf-body: 1em 'Noto Sans', sans-serif;
+$gf-body-italic:italic 1em 'Noto Sans', sans-serif;
+$gf-footers: 0.9em 'News Cycle', sans-serif;
+$gf-relationship-entry-lists: 1.0em 'Marvel', sans-serif;
+$gf-h1: 46px 'Khand', sans-serif;
+$gf-h2: 35px 'Khand', sans-serif;
+$gf-h3: 28px 'Khand', sans-serif;
+$gf-h4: 21px 'Khand', sans-serif;
+$gf-h4-relationships: 21px 'Oswald', sans-serif;
+$gf-h5: 17px 'Khand', sans-serif;
+$gf-h6: 14px 'Khand', sans-serif;
+
+
+//layout variables
+$container-width:100%;
+
+//header variables
+$top-page-margin: 150px;
+$header-padding: 10px;
+$header-menu-font-weight: bold;
+$header-menu-font-size: 18px;
+$header-menu-float: right;
+$header-menu-width: 70%;
+
+//toggle menu variables
+$menu-layout:inline;
+
+//colours and borders
+$primary-color: #fff;
+$secondary-color: #dbdbdb;
+$theme-color: rgb(254,94,19);
+$theme-border: rgb(254,94,19) 1px solid;
+$grey-border: #ccc 1px solid;
+$leaf-border: #afddd6 1px solid;
+$border-7-olive:7px solid rgb(61,83,25);
+$border-3-olive:3px solid rgb(61,83,25);
+$border-2-orange: 2px solid rgb(254,94,19);
+$border-5-orange: 5px solid rgb(254,94,19);
+
+//image variables
+$image-padding: 5px 10px 5px 1px;
+$image-promo-list: 5px 0px 5px 0px;
+$image-border: #ddd 1px solid;
+$image-margin-bottom: 5px;
+
+//styles variables
+$para-padding: 10px 0px 15px 0px;
+
+
+
+/* styles
+========================================== */
+
+//dev styles
+
+.container {
+//    width: 965px !important;
+}
+
+div {
+    //border: $divborder;
+    //width: $divwidth;
+}
+
+//elements styling
+
+ * {
+    @include box-sizing
+      }
+
+body {
+  background: $primary-color;
+  font: $gf-body;
+}
+
+h1,h2,h3,h4,h5,h6 {color: rgb(61,83,25);}
+h1 {font: $gf-h1;}
+h2 {font: $gf-h2;}
+h3 {font: $gf-h3;padding:0px 5px 0px 5px;clear:left;}
+h4 {font: $gf-h4;}
+h5 {font: $gf-h5;}
+h6 {font: $gf-h6;}
+
+.menu-header {
+    width: 100%;
+    height:130px;
+    z-index: 99;
+    background: rgb(254,94,19);
+    background: rgba(254,94,19,0.9);
+  }
+
+header{
+    top:0;
+    width:$container-width;
+    padding: $header-padding;
+    position:fixed;
+    @include ff-fix-header;
+    background:#fff;
+    height:69px;
+    font-size: $header-menu-font-size;
+}
+
+header.header-h1{
+    margin:0 auto;
+}
+
+.top-margin{
+    margin-top:$top-page-margin;
+}
+
+nav ul.head-menu {
+        float:right;
+        padding:20px;
+}
+
+nav ul.head-menu li{
+  //  margin: 10px 25px 20px 5px;
+    display:inline;
+    @include top-head-menu;
+}
+
+.head-menu-links a:link {
+  color: #ccd233;
+  text-decoration: none;
+}
+
+.head-menu-links a:visited {
+  @extend .head-menu-links;
+    color: #f83700;
+}
+
+.head-menu-links a:hover {
+  @extend .head-menu-links;
+  color: #ffdd00;
+}
+
+.head-menu-links a:active {
+  @extend .head-menu-links;
+    color: #ffbc00;
+  border-bottom: yellow dotted 1px;
+}
+
+img {
+    padding: $image-padding;
+  //  margin-bottom:$image-margin-bottom;
+}
+
+.image-entry {
+    @include image-entry;
+   // border:$border-5-orange;
+}
+
+.image-credit-hover {
+    @include image-credit-hover;
+    cursor: pointer;
+}
+
+a:hover + .image-credit-hover {
+    display: block;
+    cursor: pointer;
+}
+
+.popupoverlay {
+    @include popupoverlay;
+}
+
+
+
+
+
+img.logotop {
+    float:left;
+
+}
+ img.promo-list {
+    padding:$image-promo-list
+ }
+
+footer.mainfooter{
+    padding-top:10px;
+    height:200px;
+    font:$gf-footers;
+    border-top:$border-5-orange;
+}
+
+
+
+
+.posted {
+    border-top:$border-2-orange;
+    margin-bottom:20px;
+}
+.paginate-entry {
+    border-top:$border-3-olive;
+        margin-bottom:20px;
+}
+
+.readmore {
+    @include custom-counter-li-before;
+
+}
+
+.standfirst-entry {
+    font: $gf-body-italic;
+    padding: $para-padding;
+    padding-left: 25px !important;
+    line-height: 1.5em;
+    color:#646464;
+    border-left:$border-7-olive;
+    margin: 0 auto 10px 10px;
+}
+
+.pullquote {
+    min-height:140px;
+    background: #eff5e3 url(../img/quote-icons-3.png) no-repeat;
+    @include border-radius(5px);
+    padding:40px;
+    font:$gf-body-italic;
+    color: #6c744f;
+    line-height: 1.5em;
+}
+
+.pullquote-right{
+    float:right !important;
+    min-height:140px;
+    background: #f9e4ee url(../img/quote-icons-4.png) 100% 0% no-repeat;
+    @include border-radius(5px);
+    padding:40px;
+    font:$gf-body-italic;
+    color: #6c744f;
+    line-height: 1.5em;
+}
+
+.entry-list ul {
+    @include entry-list;
+}
+
+.entry-list h4{
+   font: $gf-h4-relationships 
+}
+
+.entry-list li.item {
+    //display: list-item;
+    //list-style: inside decimal;
+    //list-style-position:outside;
+    //border-top: 7px solid #ededee;
+    //font:$gf-relationship-entry-lists;
+    border-left: 7px solid /*#cae2c9 */ rgb(0,200,200);
+    padding:5px 10px 5px 10px;
+    margin:1px 10px 40px 10px !important;
+    float:left;
+}
+
+.entry-list-hover {
+    @include entry-list-hover;
+    @include web-transition-size;
+}
+
+a:hover + .entry-list-hover{
+    display: block;
+    cursor: pointer !important;
+    //max-width:2px;
+    //max-height:2px;
+    @include web-transition-size;
+    }
+
+.hover-more-but {
+  margin-right: 5px;
+  font-size: 80%;
+  background-color: rgb(0,200,200);
+  color: white;
+  font-weight: 800;
+  padding: 3px 8px;
+  @include border-radius(3px);
+  width:80px;
+  cursor: pointer;
+}
+.hover-more a:hover {
+    color:#d7ff80;
+    text-decoration:none;
+}
+
+.custom-counter {
+    @include custom-counter;
+}
+
+.custom-counter li {
+    @include custom-counter-li;
+}
+
+.custom-counter li::before {
+    @include custom-counter-li-before;
+}
+
+.long-quote-panel {
+    float:right !important;
+    font:$gf-body-italic;
+    background: #f9e9dd url(../img/quote-icons-4.png) 100% 0% no-repeat;
+    min-height:280px;
+    padding:20px;
+    overflow:hidden;
+    @include border-radius(5px);
+}
+
+/*channel video player */   
+iframe, embed, object {
+    max-width: 100% !important;
+}
+.video-embed {
+    width: 100%;
+    padding: 5%;
+    margin:0px auto;
+    background:#fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+
+//MASONRY BOX lists
+#masonry-box {
+	clear:both;
+	display:block;
+}
+
+.item {
+ margin: 0 8px 0 7px !important;
+  }
+
+
+.img-slideshow-preview-box {
+        padding:5px 5px 5px 5px;
+        width:150px;
+        height:150px;
+        position: relative;
+        background: rgb(237,237,216);
+        @include border-radius(5px);
+        
+}
+        
+.viewmore {
+    @include custom-counter-li-before;
+        font: 1.0em 'Oswald', sans-serif;
+        text-align:left;
+        position: absolute;
+        top: 80px;
+        left: 30px;
+        z-index: 60;
+        width:110px;
+}
+.viewmore a:hover{
+            color:white;
+}
+        .preview-box1 {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          z-index: 10;
+}
+        .preview-box2 {
+          position: absolute;
+          top: 20px;
+          left: 25px;
+          z-index: 20;
+}
+        .preview-box3 {
+              position: absolute;
+          top: 30px;
+          left: 40px;
+          z-index: 30;
+}
+
+.slider-height {
+    overflow:hidden !important
+    }
+    
+
+
+//    ////////   MEDIA QUERIES      ////////
+
+//NOTE - move any media queires to SKELETON layout.css when ready!
+
+	//@media only screen and (max-width: 479px) {
+        @media only screen and (max-width: 758px) {
+
+         .head_menu, .head-menu-links {
+            display:block;
+         }
+            
+	    #masonry-box1{
+		clear:both;
+	    }
+	    
+        }
+
+
+
+
+//  assorted annoying stuff at the end
+
+/*
+! styles taken and edited from mutli-toggle-styles css file, for toggle menu,
+from normalize.css v3.0.0 | MIT License | git.io/normalize
+effects image resizing for RWD, and header padding/relative position for menu
+*/
+
+
+*, *:before, *:after {
+      @include box-sizing;
+}
+
+
+
+/**, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }*/
+
+
+/* Image alignment & Media
+============================================================ */
+/*.aligncenter {
+  display: block;
+  margin: 0 auto 1em; }
+
+.alignleft {
+  display: block;
+  margin: 0 auto 1em; }
+
+.alignright {
+  display: block;
+  margin: 0 auto 1em; }*/
+
+img,
+audio,
+video,
+canvas,
+iframe {
+  max-width: 100%; }
+
+img {
+  height: auto; }
+
+hr { margin-bottom:20px;}

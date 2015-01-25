@@ -1,0 +1,220 @@
+@charset "windows-1252";
+
+/*///////////    TABS AND PANES STYLES FOR SITE INDEX ONLY    /////////////*/
+
+
+/* root element for tabs  */
+ul.css-tabs_index {  
+	margin:0 !important; 
+	padding:0;
+	height:39px;
+	width:auto;
+}
+
+/* single tab */
+ul.css-tabs_index li {  
+	float:left;	 
+	padding:0; 
+	margin: 0;  
+	list-style-type:none;	
+}
+
+/* link inside the tab. uses a background image */
+ul.css-tabs_index a { 
+	float:left;
+	font-size:1.4em;
+	font-weight: 600;
+	letter-spacing: -1px;
+	text-transform:lowercase;
+	color:#2B8BAB;
+	text-decoration:none;
+	border-bottom:0px;
+	height:18px;
+	background: #CAD6D8;
+	display:block;
+	padding: 10px;
+	margin-right:2px;
+	position:relative;
+	top:1px;
+	border-radius: 5px 5px 0px 0px; 
+	-moz-border-radius: 5px 5px 0px 0px; 
+	-webkit-border-radius: 5px 5px 0px 0px; 
+}
+
+ul.css-tabs_index a:hover {
+	background-color:#5F8B97;
+	color:#CAD6D8 ;
+}
+	
+/* selected tab */
+ul.css-tabs_index a.current {
+	background:#efefef;
+	color:#2B8BAB;	
+	cursor:default;
+	margin-top: 0px;
+	height:21px;
+	/*-moz-box-shadow: -1px 0px 4px rgba(0,0,0,0.2);
+	-webkit-box-shadow: -1px 0px 4px rgba(0,0,0,0.2);
+	box-shadow: -1px 0px 4px rgba(0,0,0,0.2);*/
+}
+
+	
+/* tab pane */
+.css-panes_index {
+	height: 200px;
+	max-height:200px;
+	min-height: 200px;
+	padding:5px; 
+	width: auto;
+	background:#efefef;
+	overflow: hidden;
+	clear: left;
+	-moz-box-shadow: -1px 0px 4px rgba(0,0,0,0.2);
+	-webkit-box-shadow: -1px 0px 4px rgba(0,0,0,0.2);
+	box-shadow: -1px 0px 4px rgba(0,0,0,0.2);
+	border-radius: 0px 5px 5px 5px; 
+	-moz-border-radius: 0px 5px 5px 5px; 
+	-webkit-border-radius: 0px 5px 5px 5px; 
+}
+
+a:active {
+  outline:none;
+}
+
+:focus {
+  -moz-outline-style:none;
+  outline: 0; /*fix for FF3.6 in win 7*/
+}
+
+
+/*///////////    TABS AND PANES STYLES FOR CHANNEL INDEX PAGES ONLY    /////////////*/
+
+		
+/* root element for tabs  */
+ul.css-tabs_main {  
+	margin:0 !important; 
+	padding:0;
+	height:39px;
+	width:auto;
+}
+
+/* single tab */
+ul.css-tabs_main li {  
+	float:left;	 
+	padding:0; 
+	margin: 0;  
+	list-style-type:none;	
+}
+
+/* link inside the tab. uses a background image */
+ul.css-tabs_main a { 
+	float:left;
+	font-size:1.2em;
+	font-weight: 600;
+	letter-spacing: -1px;
+	text-transform:lowercase;
+	color:#8AAFB7;
+	text-decoration:none;
+	border-bottom:0px;
+	height:18px;
+	background: #CAD6D8;
+	display:block;
+	padding: 10px;
+	margin-right:2px;
+	position:relative;
+	top:1px;
+	border-radius: 5px 5px 0px 0px; 
+	-moz-border-radius: 5px 5px 0px 0px; 
+	-webkit-border-radius: 5px 5px 0px 0px; 
+ 
+}
+
+ul.css-tabs_main a:hover {
+	background-color:#69A7A4;
+	color:#CAD6D8 ;
+}
+	
+/* selected tab */
+ul.css-tabs_main a.current {
+	background:#efefef;
+	color:#429995;	
+	cursor:default;
+	margin-top: 0px;
+	height:21px;
+}
+
+	
+/* tab pane */
+.css-panes_main {
+	height: 200px;
+	max-height:200px;
+	min-height: 200px;
+	padding:5px; 
+	width: auto;
+	background:#efefef;
+	overflow: hidden;
+	clear: left;
+	-moz-box-shadow: -1px 0px 4px rgba(0,0,0,0.2);
+	-webkit-box-shadow: -1px 0px 4px rgba(0,0,0,0.2);
+	box-shadow: -1px 0px 4px rgba(0,0,0,0.2);
+	border-radius: 0px 5px 5px 5px; 
+	-moz-border-radius: 0px 5px 5px 5px; 
+	-webkit-border-radius: 0px 5px 5px 5px; 
+}
+
+
+/*///////////    TABS AND PANES STYLES FOR DETAIL CHANNEL ENTRIES ONLY    /////////////*/
+
+
+ul.css-tabs_bb {  
+   margin:0 !important; 
+   padding:0;
+   height:30px;
+   width:auto;
+}
+/* single tab */
+ul.css-tabs_bb li {  
+   float:left;	 
+   padding:0; 
+   margin:0;  
+   list-style-type:none;	
+}
+/* link inside the tab. uses a background image */
+ul.css-tabs_bb a {
+   float:left;
+   font-size:16px;
+   font-weight:700;
+   display:block;
+   padding:5px 10px;	
+   text-decoration:none;
+   height:18px;
+   background-color: #CAD6D8;
+   border-bottom: 1px solid #efefef;
+   color:#8AAFB7;
+   margin-right:2px;
+   position:relative;
+   top:1px;	
+}
+ul.css-tabs_bb a:hover {
+   background-color:#69A7A4;
+   color:#CAD6D8;
+}	
+/* selected tab */
+ul.css-tabs_bb a.current {
+   background-color:#efefef;
+   color:#429995;	
+   cursor:default;
+   border-bottom: 1px solid #efefef;
+}
+.css-panes_bb {
+   border-width:0 1px 1px 1px;
+   min-height:200px;
+   padding:15px 20px; 
+   width:auto;
+   background: #efefef;
+   overflow: hidden;
+}
+
+
+
+
