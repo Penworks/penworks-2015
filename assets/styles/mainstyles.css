@@ -1620,23 +1620,22 @@ aside[role="complimentary"] {
 
 /*FONTS
 =========================================== */
-/*@font-face {
-    font-family: "FontAwesome";
-    src : url("fonts/font-awesome/fontawesome-webfont.eot");
-    src : url("fonts/font-awesome/fontawesome-webfont.eot") format ("embedded-opentype");
-    src : url("fonts/font-awesome/fontawesome-webfont.woff") format ("woff");
-    src : url("fonts/font-awesome/fontawesome-webfont.ttf") format ("truetype");
-    src : url("fonts/font-awesome/fontawesome-webfont.svg") format ("svg");
-    font-weight:normal;
-    font-style: normal;
-}*/
+@font-face {
+  font-family: "FontAwesome";
+  src: url("fonts/font-awesome/fontawesome-webfont.eot");
+  src: url("fonts/font-awesome/fontawesome-webfont.eot") format "embedded-opentype";
+  src: url("fonts/font-awesome/fontawesome-webfont.woff") format "woff";
+  src: url("fonts/font-awesome/fontawesome-webfont.ttf") format "truetype";
+  src: url("fonts/font-awesome/fontawesome-webfont.svg") format "svg";
+  font-weight: normal;
+  font-style: normal; }
 /*
  MIXINS
  ========================================== */
-/*@mixin menu-fontawesome {
+/**@mixin menu-fontawesome {
     @extend .fa;
     @extend .fa-camera-retro;
-    font:$gf-oswald-menu;
+   // font:$gf-oswald-menu;
     &:before {
         font-family: "FontAwesome";
     }
@@ -1874,8 +1873,6 @@ img.logotop {
 #masonry-box {
   clear: both;
   display: block;
-  /*        overflow:hidden;
-          border:1px solid red;*/
   position: relative; }
 
 .item {
@@ -1897,11 +1894,23 @@ img.logotop {
 .item a:hover {
   color: #f35119; }
 
-.scroll-end {
+.scroll-end, .pagination {
   position: absolute;
-  bottom: -20px;
-  left: 40px;
+  bottom: -30px;
+  right: 18px;
   font: 14px "Khand", sans-serif; }
+
+.pagination {
+  margin-right: 5px;
+  font-size: 100%;
+  background-color: #fe5e13;
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
 
 .posted {
   border-top: 2px solid #fe5e13;
@@ -1953,6 +1962,35 @@ img.logotop {
   margin: 0;
   padding: 0;
   list-style-type: none; }
+
+.custom-counter strong {
+  color: #864a2d;
+  font-size: 1.2em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  background-color: rgba(199, 74, 45, 0.5);
+  margin: 0px 3px;
+  padding: 1px 8px 1px 8px; }
+
+.custom-counter a:link, .custom-counter a:visited {
+  font-size: 1.2em;
+  text-decoration: none;
+  height: 10px;
+  width: 10px;
+  color: #f1de6d;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  background-color: rgba(199, 74, 45, 0.5);
+  margin: 0px 2px;
+  padding: 1px 8px 1px 8px; }
+
+.custom-counter a:hover {
+  border-bottom: #afdd78 1px dotted;
+  color: #fffa00; }
 
 .custom-counter li {
   counter-increment: step-counter;

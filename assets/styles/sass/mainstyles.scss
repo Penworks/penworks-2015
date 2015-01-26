@@ -49,7 +49,7 @@ aside[role="complimentary"] {
 /*FONTS
 =========================================== */
 
-/*@font-face {
+@font-face {
     font-family: "FontAwesome";
     src : url("fonts/font-awesome/fontawesome-webfont.eot");
     src : url("fonts/font-awesome/fontawesome-webfont.eot") format ("embedded-opentype");
@@ -58,7 +58,7 @@ aside[role="complimentary"] {
     src : url("fonts/font-awesome/fontawesome-webfont.svg") format ("svg");
     font-weight:normal;
     font-style: normal;
-}*/
+}
 
 
 
@@ -111,6 +111,17 @@ aside[role="complimentary"] {
   margin-right: 5px;
   font-size: 80%;
   background-color: rgb(179, 200, 16);
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  @include border-radius(3px);
+}
+
+@mixin custom-button-orange {
+ // content: counter(step-counter);
+  margin-right: 5px;
+  font-size: 100%;
+  background-color:$theme-color;
   color: white;
   font-weight: bold;
   padding: 3px 8px;
@@ -224,10 +235,10 @@ aside[role="complimentary"] {
     padding: 10px 8px;
 }
 
-/*@mixin menu-fontawesome {
+/**@mixin menu-fontawesome {
     @extend .fa;
     @extend .fa-camera-retro;
-    font:$gf-oswald-menu;
+   // font:$gf-oswald-menu;
     &:before {
         font-family: "FontAwesome";
     }
@@ -282,6 +293,7 @@ fawn hex #f3d6a7
 $primary-color: #fff;
 $secondary-color: #dbdbdb;
 $theme-color: rgb(254,94,19);
+$theme-color-brick: rgb(199,74,45);
 
 
 //BORDERS
@@ -392,7 +404,6 @@ nav#menu {
     float:right;
     margin-top:-90px;
     margin-right:20px;
-   // border:$grey-border;
 }
 
 .menu-wide li {
@@ -559,15 +570,13 @@ iframe, embed, object {
 	left: 0;
 	width: 100%;
 	height: 100%;
-            background:#fff;
+        background:#fff;
 }
 
 //MASONRY BOX lists
 #masonry-box {
 	clear:both;
 	display:block;
-/*        overflow:hidden;
-        border:1px solid red;*/
         position: relative;
 }
 
@@ -594,13 +603,16 @@ iframe, embed, object {
     color: rgb(243, 81, 25);
 }
 
-.scroll-end{
+.scroll-end, .pagination{
     position:absolute;
-    bottom:-20px;
-    left: 40px;
+    bottom:-30px;
+   right: 18px;
     font:$gf-h6;
 }
 
+.pagination{
+    @include custom-button-orange;
+}
 .posted {
     border-top:$border-2-orange;
     margin-bottom:20px;
@@ -638,6 +650,31 @@ iframe, embed, object {
     @include custom-counter;
 }
 
+.custom-counter strong {
+    color: rgb(134, 74, 45);
+    font-size:1.2em;
+   @include border-radius(3px);
+   background-color:rgba(199,74,45, 0.5);
+   margin: 0px 3px;
+   padding:1px 8px 1px 8px;
+}
+
+.custom-counter a:link, .custom-counter a:visited {
+   font-size:1.2em;
+   text-decoration: none;
+   height:10px;
+   width:10px;
+   color:#f1de6d;
+   @include border-radius(3px);
+   background-color:/*#b94e0e*/ rgba(199,74,45, 0.5);
+   margin: 0px 2px;
+   padding:1px 8px 1px 8px;
+}
+
+.custom-counter a:hover {
+    border-bottom: $leaf-dotted-border;
+      color: #fffa00;
+}
 .custom-counter li {
     @include custom-counter-li;
 }

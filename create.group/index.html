@@ -1,6 +1,6 @@
 {layout="includes/.html_layout"}
 
-     <!-- Creative List
+     <!-- Creative INDEX List
 ================================================== -->
 
 	<div class="sixteen columns top-margin">		
@@ -10,54 +10,71 @@
 	</div><!--/.sixteen column-->		
 
 	
-	{exp:channel:entries search:featured_create_item="y" channel="create" limit="1" disable="member_data|trackbacks" orderby="date"}
+
 	
 	<div id="masonry-box">
 		
+		{!--{exp:switchee variable = "{segment_2}" parse="inward"}
+				{case value=""}
+				{/case}
+				{case value="#^P(\d+)$#|''"}
+				{/case}
+				{/exp:switchee}--}
+		
+		{!--{if {options:selected option="urgent"}}
+			    {exp:stash:set_value name="urgent" value="true"}
+			{/if}--}
+			
+			
+			
+	 {exp:channel:entries channel="create" limit="6" disable="member_data|trackbacks" sort="desc" dynamic="yes" paginate="bottom" orderby="date"}
+	 
+	 
+			
+		{if featured_create_item}
+            
+	    
+			{featured_create_item}
 		<div class="eight columns item">
 			<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>	
-			
 			{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
 			<img src="{image:url:medium}" title="#{image:title}" class="item-img"/>
 			{/exp:channel_images:images}
 			{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=create/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{create_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
 		</div><!--/.eight columns-->
+		{/featured_create_item}
 		
-	{/exp:channel:entries}
-	
-	
-	{exp:channel:entries channel="create" limit="6" disable="member_data|trackbacks" sort="desc" dynamic="yes" paginate="bottom" offset="1" orderby="date"}
+
+    
 		
+		{if:else}
+			
+			
+			
 		<div class="eight columns item">	
 			<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>
-			
 			{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
-			<img src="{image:url:small-rec}" title="#{image:title}" class="item-img" /> 	
+			<img src="{image:url:small-rec}" title="#{image:title}" class="item-img" />
 			{/exp:channel_images:images}
 			{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=create/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{create_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
 		</div><!--/.eight columns-->
 		
-	
-	{paginate}
-	<div class="pagination" style="display:none;">
-	
+		
+		{/if}
+		
+		
 
-		{pagination_links}
-			{previous_page}
-				<a href="list/{pagination_url}" class="newer">load less</a>
-			{/previous_page}
-			
-			{next_page}
-				<a href="list/{pagination_url}" class="older">load more</a>
-				{/next_page}
-		{/pagination_links}
-	</div>
-	{/paginate}	
+                  
+		
+		
+			{if total_results <= '1'}
+			{paginate}
+			<div class="pagination"><i class="fa fa-file-text-o"></i> Page {current_page} of {total_pages}  <span class="custom-counter">{pagination_links}</span></div>
+			{/paginate}
+			{/if}
 	
+		{/exp:channel:entries}
 
+</div><!--/#masonry-box-->
 	
-	{/exp:channel:entries}
-	
-	
-	</div><!--/#masonry-box-->
-
+                       
