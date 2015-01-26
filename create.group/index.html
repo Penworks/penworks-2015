@@ -14,58 +14,33 @@
 	
 	<div id="masonry-box">
 		
-		{!--{exp:switchee variable = "{segment_2}" parse="inward"}
-				{case value=""}
-				{/case}
-				{case value="#^P(\d+)$#|''"}
-				{/case}
-				{/exp:switchee}--}
-		
-		{!--{if {options:selected option="urgent"}}
-			    {exp:stash:set_value name="urgent" value="true"}
-			{/if}--}
-			
-			
-			
 	 {exp:channel:entries channel="create" limit="6" disable="member_data|trackbacks" sort="desc" dynamic="yes" paginate="bottom" orderby="date"}
-	 
-	 
-			
+	
 		{if featured_create_item}
             
-	    
 			{featured_create_item}
-		<div class="eight columns item">
-			<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>	
-			{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
-			<img src="{image:url:medium}" title="#{image:title}" class="item-img"/>
-			{/exp:channel_images:images}
-			{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=create/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{create_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
-		</div><!--/.eight columns-->
-		{/featured_create_item}
-		
+			<div class="eight columns item">
+				<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>	
+				{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
+				<img src="{image:url:medium}" title="#{image:title}" class="item-img"/>
+				{/exp:channel_images:images}
+				{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=create/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{create_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+			</div><!--/.eight columns-->
+			{/featured_create_item}
 
-    
 		
-		{if:else}
-			
-			
-			
-		<div class="eight columns item">	
-			<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>
-			{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
-			<img src="{image:url:small-rec}" title="#{image:title}" class="item-img" />
-			{/exp:channel_images:images}
-			{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=create/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{create_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
-		</div><!--/.eight columns-->
+		{if:else}			
+							
+			<div class="eight columns item">	
+				<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>
+				{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
+				<img src="{image:url:small-rec}" title="#{image:title}" class="item-img" />
+				{/exp:channel_images:images}
+				{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=create/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{create_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+			</div><!--/.eight columns-->
 		
 		
 		{/if}
-		
-		
-
-                  
-		
 		
 			{if total_results <= '1'}
 			{paginate}

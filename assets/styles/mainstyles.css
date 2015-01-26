@@ -1971,7 +1971,7 @@ img.logotop {
   -ms-border-radius: 3px;
   border-radius: 3px;
   background-color: rgba(199, 74, 45, 0.5);
-  margin: 0px 3px;
+  margin: -1px;
   padding: 1px 8px 1px 8px; }
 
 .custom-counter a:link, .custom-counter a:visited {
@@ -1985,7 +1985,7 @@ img.logotop {
   -ms-border-radius: 3px;
   border-radius: 3px;
   background-color: rgba(199, 74, 45, 0.5);
-  margin: 0px 2px;
+  margin: -1px;
   padding: 1px 8px 1px 8px; }
 
 .custom-counter a:hover {

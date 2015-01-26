@@ -255,6 +255,48 @@ jQuery(document).ready(function($) {
      // columnWidth : 500
   });
 });
+  
+//Infinite scroll
+var $container = $('#masonry-box');
+	$container.infinitescroll({
+		navSelector  : 'div.pagination', 
+		nextSelector : 'div.pagination a.older',
+		itemSelector : '.item',
+		loading: {
+			finishedMsg: "<div class=\"scroll-end\">No more posts here :(</div>",
+			img: "{skel_css}img/ajax-loader.gif",
+			msgText: "<em>Loading more posts...</em>"
+		},
+		animate      : true, 
+		extraScrollPx: 150,
+                bufferPx : 40,
+		extractLink: true,
+              //  speed: 400,
+
+    pathParse: function() {
+        return ['{path={segment_1}}entry/P','']
+    },
+		debug: true,
+		errorCallback: function() { 
+			// fade out the error message after 2 seconds
+			$('#infscr-loading').animate({opacity: .8},3000).fadeOut('normal');   
+		}
+		},
+		// Call Masonry as a callback  -  Uncomment for use
+		
+function( newElements ) {
+			 var $newElems = $( newElements ); 
+			$(this).masonry( 'appended', $newElems );
+		}
+
+	);  
+
+/*  var parameters = JSON.parse('{"top":"200px"}');
+console.log(parameters);
+$("#scroll-end").animate(parameters,10);  */    
+        
+        
+        
         
         
 //Embedagram

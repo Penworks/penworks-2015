@@ -655,7 +655,7 @@ iframe, embed, object {
     font-size:1.2em;
    @include border-radius(3px);
    background-color:rgba(199,74,45, 0.5);
-   margin: 0px 3px;
+   margin: -1px;
    padding:1px 8px 1px 8px;
 }
 
@@ -667,7 +667,7 @@ iframe, embed, object {
    color:#f1de6d;
    @include border-radius(3px);
    background-color:/*#b94e0e*/ rgba(199,74,45, 0.5);
-   margin: 0px 2px;
+   margin: -1px;
    padding:1px 8px 1px 8px;
 }
 
