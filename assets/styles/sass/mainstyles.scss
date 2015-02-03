@@ -41,15 +41,15 @@ aside[role="complimentary"] {
  PARTIALS and url imports
 ========================================== */
 
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic|News+Cycle:400,700|Khand:400,700|Oswald:400,700|Rubik+One);
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic|News+Cycle:400,700|Khand:400,700|Oswald:400,700);
 @import "/Library/Ruby/Gems/2.0.0/gems/font-awesome-sass-4.2.2/assets/stylesheets/font-awesome.scss";
 
 //@import '_partial';
 
-/*FONTS
+/*FONTS - not used for font awesome
 =========================================== */
 
-@font-face {
+/*@font-face {
     font-family: "FontAwesome";
     src : url("fonts/font-awesome/fontawesome-webfont.eot");
     src : url("fonts/font-awesome/fontawesome-webfont.eot") format ("embedded-opentype");
@@ -58,7 +58,7 @@ aside[role="complimentary"] {
     src : url("fonts/font-awesome/fontawesome-webfont.svg") format ("svg");
     font-weight:normal;
     font-style: normal;
-}
+}*/
 
 
 
@@ -126,6 +126,33 @@ aside[role="complimentary"] {
   font-weight: bold;
   padding: 3px 8px;
   @include border-radius(3px);
+}
+
+@mixin form-button {
+  background: #f08113;
+  background-image: -webkit-linear-gradient(top, #f08113, #e66610);
+  background-image: -moz-linear-gradient(top, #f08113, #e66610);
+  background-image: -ms-linear-gradient(top, #f08113, #e66610);
+  background-image: -o-linear-gradient(top, #f08113, #e66610);
+  background-image: linear-gradient(to bottom, #f08113, #e66610);
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  font-family: Arial;
+  color: #f0edb7;
+  font-size: 12px;
+  padding: 8px 15px 8px 15px;
+  text-decoration: none;
+}
+
+@mixin form-button-hover {
+  background: #7ddbac;
+  background-image: -webkit-linear-gradient(top, #7ddbac, #86e86a);
+  background-image: -moz-linear-gradient(top, #7ddbac, #86e86a);
+  background-image: -ms-linear-gradient(top, #7ddbac, #86e86a);
+  background-image: -o-linear-gradient(top, #7ddbac, #86e86a);
+  background-image: linear-gradient(to bottom, #7ddbac, #86e86a);
+  text-decoration: none;
 }
 
 @mixin web-transition-size {
@@ -524,7 +551,6 @@ img.logotop {
 }
 
 
-
 //pop ups for forms etc
 .white-popup {
   position: relative;
@@ -580,8 +606,10 @@ iframe, embed, object {
         position: relative;
 }
 
+
 .item {
- margin: 0 8px 0 7px !important;
+    margin: 0 8px 0 7px !important;
+    position: relative;
   }
   
 /*div#masonry-box > div.item:first-child{
@@ -603,16 +631,28 @@ iframe, embed, object {
     color: rgb(243, 81, 25);
 }
 
-.scroll-end, .pagination{
+//featured posts
+.featured {
+    color: rgb(179, 200, 16);
+    z-index:50;
     position:absolute;
-    bottom:-30px;
-   right: 18px;
-    font:$gf-h6;
+    top:50px;
+    left:20px;
 }
 
+
+
+//READMORE & PAGINATION
+
 .pagination{
-    @include custom-button-orange;
+    position:absolute;
+    bottom:-30px;
+    right: 18px;
+    font:$gf-h6;
+    color: rgb(165, 45, 41);
+    font:$gf-h5;
 }
+
 .posted {
     border-top:$border-2-orange;
     margin-bottom:20px;
@@ -621,28 +661,18 @@ iframe, embed, object {
     border-top:$border-3-olive;
         margin-bottom:20px;
 }
-       
-.viewmore {
-    @include custom-button;
-        text-align:left;
-        position: absolute;
-        top: 88px;
-        left: 10px;
-        z-index: 60;
-        width:105px;
-}
 
 .readmore {
     @include custom-button;
 
 }
 
-.viewmore a:link, .viewmore a:visited, .readmore a:link, .readmore a:visited{
+.readmore a:link, .readmore a:visited{
             color:#56771f;
             text-decoration:none;
             border-bottom:$leaf-dotted-border;
 }
-.viewmore a:hover, .readmore a:hover{
+.readmore a:hover{
             color:#fff;
 }
 
@@ -650,30 +680,29 @@ iframe, embed, object {
     @include custom-counter;
 }
 
-.custom-counter strong {
-    color: rgb(134, 74, 45);
+.custom-counter strong { //this is for pagination auto generated links
+    color: rgb(165, 45, 41);
     font-size:1.2em;
-   @include border-radius(3px);
-   background-color:rgba(199,74,45, 0.5);
-   margin: -1px;
-   padding:1px 8px 1px 8px;
+    @include border-radius(3px);
+    background-color:rgba(199,74,45, 0.5);
+    margin: -1px;
+    padding:1px 8px 1px 8px;
 }
 
 .custom-counter a:link, .custom-counter a:visited {
-   font-size:1.2em;
-   text-decoration: none;
-   height:10px;
-   width:10px;
-   color:#f1de6d;
-   @include border-radius(3px);
-   background-color:/*#b94e0e*/ rgba(199,74,45, 0.5);
-   margin: -1px;
-   padding:1px 8px 1px 8px;
+    font-size:1.2em;
+    text-decoration: none;
+    height:10px;
+    width:10px;
+    color: rgb(165, 45, 41);
+    @include border-radius(3px);
+    background-color: rgba(229, 216, 195, 0.3);
+    margin: -1px;
+    padding:1px 8px 1px 8px;
 }
 
 .custom-counter a:hover {
-    border-bottom: $leaf-dotted-border;
-      color: #fffa00;
+      color: #ff4600;
 }
 .custom-counter li {
     @include custom-counter-li;
@@ -681,6 +710,23 @@ iframe, embed, object {
 
 .custom-counter li::before {
     @include custom-counter-li-before;
+}
+
+form#test-form.form-penworks-contact fieldset {
+    width:400px;
+   @include border-radius(5px);
+   border:$leaf-dotted-border;
+    font:$gf-h5;
+}
+
+form.form-penworks-contact .btn{
+    width:30px;
+    height:20px;
+    @include form-button;
+}
+
+form.form-penworks-contact .btn a:hover{
+        @include form-button-hover;
 }
 
 //    ////////   MEDIA QUERIES      ////////

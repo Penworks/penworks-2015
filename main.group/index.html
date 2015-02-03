@@ -9,6 +9,10 @@ HOMEPAGE
 
 		<h2>{title}</h2>
 					{exp:trunchtml chars="500" inline="..." ending="<span class='readmore'><a href='{title_permalink=blog/entry}'>Read more</a> &rarr;</span>"}{exp:tagstripper:tagsToStrip tags="img"}{blog_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+					
+					
+				{embed="includes/.contactform"}
+				
 					{/exp:channel:entries}
 		
 		</div><!--/.sixteen.columns-->

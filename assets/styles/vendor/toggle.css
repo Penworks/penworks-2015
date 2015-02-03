@@ -51,7 +51,7 @@ penworks edits for penworks.net
 /*
 NB - IMPORTANT this header holder width controls the menu list item widths as well as the menu position!
 */
-  .menu-header .holder { width: 100%; }
+  .menu-header .holder { width: 100%;}
  
 /*===
  penedits below: added margins, font size and line height for unicode lines icon
@@ -70,8 +70,8 @@ a.menu-link {display: block; color: #f5871d; background-color:#4f612d; float: ri
   
   a.menu-link:hover {text-decoration: none;}
   
-  .menu { clear: both; min-width: inherit; float: none; }
-  .menu, .menu > ul ul { overflow: hidden; max-height: 0; background-color: #f4842e; }
+  .menu { clear: both; min-width: inherit; float: none;}
+  .menu, .menu > ul ul { overflow: hidden; max-height: 0; background-color: #f4842e;}
   .menu > li > ul.sub-menu { padding: 0px; border: none; }
   .menu.active, .menu > ul ul.active { max-height: 55em;}
   .menu ul { display: inline; }
@@ -83,6 +83,7 @@ a.menu-link {display: block; color: #f5871d; background-color:#4f612d; float: ri
   pen edit for last child bottom padding and extra bottom border
   =============
    */
+  nav#menu {margin-top:24px;}
     .menu ul li:last-child {height:58px;}
     .menu ul li:last-child > a {border-bottom:none;}
     
@@ -99,7 +100,7 @@ a.menu-link {display: block; color: #f5871d; background-color:#4f612d; float: ri
     content: "-";
   }
   .menu ul ul > li a { background-color: #e4e4e4; height:58px; padding: 19px 18px 19px 30px;}
-  .menu ul ul, .menu ul ul ul { display: inherit; position: relative; left: auto; top:auto; border:none; }
+  .menu ul ul, .menu ul ul ul { display: inherit; position: relative; left: auto; top:auto; border:none;}
   
   
 }

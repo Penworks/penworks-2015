@@ -30,7 +30,7 @@ aside[role="complimentary"] {
 /*
  PARTIALS and url imports
 ========================================== */
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic|News+Cycle:400,700|Khand:400,700|Oswald:400,700|Rubik+One);
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic|News+Cycle:400,700|Khand:400,700|Oswald:400,700);
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -1618,17 +1618,18 @@ aside[role="complimentary"] {
 .fa-meanpath:before {
   content: ""; }
 
-/*FONTS
+/*FONTS - not used for font awesome
 =========================================== */
-@font-face {
-  font-family: "FontAwesome";
-  src: url("fonts/font-awesome/fontawesome-webfont.eot");
-  src: url("fonts/font-awesome/fontawesome-webfont.eot") format "embedded-opentype";
-  src: url("fonts/font-awesome/fontawesome-webfont.woff") format "woff";
-  src: url("fonts/font-awesome/fontawesome-webfont.ttf") format "truetype";
-  src: url("fonts/font-awesome/fontawesome-webfont.svg") format "svg";
-  font-weight: normal;
-  font-style: normal; }
+/*@font-face {
+    font-family: "FontAwesome";
+    src : url("fonts/font-awesome/fontawesome-webfont.eot");
+    src : url("fonts/font-awesome/fontawesome-webfont.eot") format ("embedded-opentype");
+    src : url("fonts/font-awesome/fontawesome-webfont.woff") format ("woff");
+    src : url("fonts/font-awesome/fontawesome-webfont.ttf") format ("truetype");
+    src : url("fonts/font-awesome/fontawesome-webfont.svg") format ("svg");
+    font-weight:normal;
+    font-style: normal;
+}*/
 /*
  MIXINS
  ========================================== */
@@ -1876,7 +1877,8 @@ img.logotop {
   position: relative; }
 
 .item {
-  margin: 0 8px 0 7px !important; }
+  margin: 0 8px 0 7px !important;
+  position: relative; }
 
 /*div#masonry-box > div.item:first-child{
 .item-img {
@@ -1894,23 +1896,20 @@ img.logotop {
 .item a:hover {
   color: #f35119; }
 
-.scroll-end, .pagination {
+.featured {
+  color: #b3c810;
+  z-index: 50;
+  position: absolute;
+  top: 50px;
+  left: 20px; }
+
+.pagination {
   position: absolute;
   bottom: -30px;
   right: 18px;
-  font: 14px "Khand", sans-serif; }
-
-.pagination {
-  margin-right: 5px;
-  font-size: 100%;
-  background-color: #fe5e13;
-  color: white;
-  font-weight: bold;
-  padding: 3px 8px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px; }
+  font: 14px "Khand", sans-serif;
+  color: #a52d29;
+  font: 17px "Khand", sans-serif; }
 
 .posted {
   border-top: 2px solid #fe5e13;
@@ -1919,24 +1918,6 @@ img.logotop {
 .paginate-entry {
   border-top: 3px solid #3d5319;
   margin-bottom: 20px; }
-
-.viewmore {
-  margin-right: 5px;
-  font-size: 80%;
-  background-color: #b3c810;
-  color: white;
-  font-weight: bold;
-  padding: 3px 8px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  text-align: left;
-  position: absolute;
-  top: 88px;
-  left: 10px;
-  z-index: 60;
-  width: 105px; }
 
 .readmore {
   margin-right: 5px;
@@ -1950,12 +1931,12 @@ img.logotop {
   -ms-border-radius: 3px;
   border-radius: 3px; }
 
-.viewmore a:link, .viewmore a:visited, .readmore a:link, .readmore a:visited {
+.readmore a:link, .readmore a:visited {
   color: #56771f;
   text-decoration: none;
   border-bottom: #afdd78 1px dotted; }
 
-.viewmore a:hover, .readmore a:hover {
+.readmore a:hover {
   color: #fff; }
 
 .custom-counter {
@@ -1964,7 +1945,7 @@ img.logotop {
   list-style-type: none; }
 
 .custom-counter strong {
-  color: #864a2d;
+  color: #a52d29;
   font-size: 1.2em;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1979,18 +1960,17 @@ img.logotop {
   text-decoration: none;
   height: 10px;
   width: 10px;
-  color: #f1de6d;
+  color: #a52d29;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   border-radius: 3px;
-  background-color: rgba(199, 74, 45, 0.5);
+  background-color: rgba(229, 216, 195, 0.3);
   margin: -1px;
   padding: 1px 8px 1px 8px; }
 
 .custom-counter a:hover {
-  border-bottom: #afdd78 1px dotted;
-  color: #fffa00; }
+  color: #ff4600; }
 
 .custom-counter li {
   counter-increment: step-counter;
@@ -2008,6 +1988,42 @@ img.logotop {
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   border-radius: 3px; }
+
+form#test-form.form-penworks-contact fieldset {
+  width: 400px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border: #afdd78 1px dotted;
+  font: 17px "Khand", sans-serif; }
+
+form.form-penworks-contact .btn {
+  width: 30px;
+  height: 20px;
+  background: #f08113;
+  background-image: -webkit-linear-gradient(top, #f08113, #e66610);
+  background-image: -moz-linear-gradient(top, #f08113, #e66610);
+  background-image: -ms-linear-gradient(top, #f08113, #e66610);
+  background-image: -o-linear-gradient(top, #f08113, #e66610);
+  background-image: linear-gradient(to bottom, #f08113, #e66610);
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  font-family: Arial;
+  color: #f0edb7;
+  font-size: 12px;
+  padding: 8px 15px 8px 15px;
+  text-decoration: none; }
+
+form.form-penworks-contact .btn a:hover {
+  background: #7ddbac;
+  background-image: -webkit-linear-gradient(top, #7ddbac, #86e86a);
+  background-image: -moz-linear-gradient(top, #7ddbac, #86e86a);
+  background-image: -ms-linear-gradient(top, #7ddbac, #86e86a);
+  background-image: -o-linear-gradient(top, #7ddbac, #86e86a);
+  background-image: linear-gradient(to bottom, #7ddbac, #86e86a);
+  text-decoration: none; }
 
 @media only screen and (max-width: 758px) {
   img.logotop {

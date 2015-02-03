@@ -16,19 +16,19 @@
 		
 			{exp:channel:entries channel="skills" limit="6" disable="member_data|trackbacks" sort="desc" dynamic="yes" paginate="bottom" orderby="date"}
 	 
-		{if featured_skills_item}
+		{if featured_blog_item}
 		
-		{featured_skills_item}
+		{featured_blog_item}
 		
 		<div class="eight columns item">
 			<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>	
 			
 			{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
-			<img src="{image:url:medium}" />
+			<i class="fa fa-bookmark fa-2x featured"></i><img src="{image:url:medium}" />
 			{/exp:channel_images:images}
 			{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=blog/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{blog_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
 		</div><!--/.eight columns-->
-		{/featured_skills_item}
+		{/featured_blog_item}
 		
 		{if:else}
 	
@@ -47,7 +47,7 @@
 		
 			{if total_results <= '1'}
 			{paginate}
-			<div class="pagination"><i class="fa fa-file-text-o"></i> Page {current_page} of {total_pages}  <span class="custom-counter">{pagination_links}</span></div>
+			<div class="pagination">Page {current_page} of {total_pages} <i class="fa fa-arrows-h"></i> <span class="custom-counter">{pagination_links}</span></div>
 			{/paginate}
 			{/if}
 	
