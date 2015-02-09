@@ -1,6 +1,8 @@
 // Variables
 // --------------------------
 
+//$fa-font-path: 'themes/site_themes/default_site/assets/styles/fonts/font-awesome' !default;
+//$fa-font-path: '../fonts/font-awesome' !default;
 $fa-font-path:        "../fonts" !default;
 //$fa-font-path:        "//netdna.bootstrapcdn.com/font-awesome/4.2.0/fonts" !default; // for referencing Bootstrap CDN font files directly
 $fa-css-prefix:       fa !default;
@@ -559,3 +561,5 @@ $fa-var-youtube: "\f167";
 $fa-var-youtube-play: "\f16a";
 $fa-var-youtube-square: "\f166";
 
+
+@fa-font-path: "../fonts/font-awesome";

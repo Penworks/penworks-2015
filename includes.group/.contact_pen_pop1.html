@@ -1,0 +1,34 @@
+     {exp:freeform:form
+     form:class="mfp-hide white-popup-block form-penworks-contact"
+     form_name="contact_pen"
+     form:id="test-form"
+     required="name|email"
+     notify="info@penworks.net"
+     return="/main/thankyou"}
+          
+     <fieldset class="right">   
+       <h3>Thanks for contacting Penworks.net</h3>
+     
+     <ul>  
+     <form action="" method="POST" enctype="application/x-www-form-urlencoded">
+     
+     
+     <li> <label for="Name">Your Name</label><input type="text" name="name" value="" maxlength="40"  min="" max="" accept=""/></li>
+     
+     <li> <label for="Email">Your Email</label><input type="text" name="email" placeholder="example@domain.com" value=""  maxlength="40"  min="" max="" accept=""/></li>
+     
+     <li> <label for="Phone Number">Phone Number</label><input type="text" placeholder="Eg. +447500000000" name="phone_number" value=""  maxlength="40"  min="" max="" accept=""/></li>
+     
+     <li> <label for="Message">Your Message</label><textarea name="message" wrap="SOFT" style="width:250px !important"></textarea></li>
+     
+   <li class="robotcatcher"><label for="honeepot">Don't put anything here</label>
+  <input type="text" name="honeepot" id="honeepot" /></li>
+   
+   
+     <li><input type="submit"/> <input type="reset"/></li>
+     <!--<input type="hidden" redirect="/thankyou" />-->
+     </form>
+     </ul>
+     
+     </fieldset>
+     {/exp:freeform:form}

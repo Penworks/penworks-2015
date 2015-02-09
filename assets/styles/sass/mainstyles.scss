@@ -46,21 +46,6 @@ aside[role="complimentary"] {
 
 //@import '_partial';
 
-/*FONTS - not used for font awesome
-=========================================== */
-
-/*@font-face {
-    font-family: "FontAwesome";
-    src : url("fonts/font-awesome/fontawesome-webfont.eot");
-    src : url("fonts/font-awesome/fontawesome-webfont.eot") format ("embedded-opentype");
-    src : url("fonts/font-awesome/fontawesome-webfont.woff") format ("woff");
-    src : url("fonts/font-awesome/fontawesome-webfont.ttf") format ("truetype");
-    src : url("fonts/font-awesome/fontawesome-webfont.svg") format ("svg");
-    font-weight:normal;
-    font-style: normal;
-}*/
-
-
 
 /*
  MIXINS
@@ -379,6 +364,27 @@ h5 {font: $gf-h5;}
 h6 {font: $gf-h6;}
 
 
+p a:link {
+    color: rgb(178, 45, 61);
+    text-decoration: none;
+}
+
+p a:visited {
+    color: rgb(222, 45, 40);
+    text-decoration: none;
+}
+
+p a:hover {
+    color: rgb(178, 198, 61);
+    text-decoration: none;
+    border-bottom: rgb(178, 198, 61) dotted 1px;
+}  
+
+p a:active {
+    color: rgb(178, 226, 61);
+    text-decoration: none;
+}
+
 header{
     top:0;
     width:$container-width;
@@ -487,7 +493,7 @@ nav#menu {
   border-bottom: yellow dotted 1px;
 }
 
-footer.mainfooter{
+footer{
     padding-top:10px;
     height:200px;
     font:$gf-footers;
@@ -506,7 +512,7 @@ footer.mainfooter{
 
 .mainfooter a:hover {
  @extend .mainfooter;
- color: #dddd21;
+ color: #afdd78;
 }
 
 
@@ -550,25 +556,6 @@ img.logotop {
     width:90px;
 }
 
-
-//pop ups for forms etc
-.white-popup {
-  position: relative;
-  background: #FFF;
-  padding: 20px;
-  width:auto;
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-.white-popup-block {
-  position: relative;
-  background: #FFF;
-  padding: 20px;
-  width:auto;
-  max-width: 800px;
-  margin: 20px auto;
-}
 
 /*channel video player */   
 iframe, embed, object {
@@ -713,13 +700,47 @@ iframe, embed, object {
 }
 
 form#test-form.form-penworks-contact fieldset {
-    width:400px;
-   @include border-radius(5px);
-   border:$leaf-dotted-border;
-    font:$gf-h5;
+    max-width:380px;
+   @include border-radius(3px);
+    background: rgba(249, 126, 29, 0.9);
+    padding:20px;
+    margin: 4px 3px 4px 5px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
 }
 
-form.form-penworks-contact .btn{
+form#test-form.form-penworks-contact fieldset h3{
+    color:$theme-color-brick;
+    font: $gf-oswald-menu;
+}
+
+form#test-form.form-penworks-contact fieldset label {
+        font:$gf-h4;
+        color:#fff;
+}
+
+// FORM OVERLAYS
+
+/*.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width:auto;
+  max-width: 400px;
+  margin: 20px auto;
+}*/
+
+.white-popup-block {
+  position: relative;
+  background: rgba(245,254,242, 0.9);
+  padding: 5px 0px 5px 5px;
+  width:auto;
+  max-width:400px;
+  //max-width: 800px;
+  margin: 20px auto;
+  @include border-radius(3px);
+}
+
+/*form.form-penworks-contact .btn{
     width:30px;
     height:20px;
     @include form-button;
@@ -727,6 +748,12 @@ form.form-penworks-contact .btn{
 
 form.form-penworks-contact .btn a:hover{
         @include form-button-hover;
+}*/
+
+.robotcatcher {
+  display: block !important;
+  left: -9999px !important;
+  position: absolute !important;
 }
 
 //    ////////   MEDIA QUERIES      ////////

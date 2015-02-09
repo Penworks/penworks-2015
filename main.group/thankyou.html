@@ -1,0 +1,45 @@
+{layout="includes/.html_layout"}
+<!--
+HOMEPAGE
+==================================
+-->
+
+		<div class="sixteen columns top-margin">
+			
+	 {exp:channel:entries channel="blog" limit="1" disable="member_data|trackbacks" sort="desc" dynamic="yes" paginate="bottom" orderby="date" entry_id="33"}		
+			
+			<div class="fifteen columns offset-by-one">
+			
+	<h2 class="title">{title}</h2>
+	
+	 
+	<p>{blog_content}</p>
+	
+
+<!--display a large image if video is not present-->
+        <div class="image-entry">
+        {exp:channel_images:images entry_id="{entry_id}" cover_only="yes"}
+        
+        <a><img src="{image:url:large}" /></a>  
+        <div class="image-credit-hover">{image:title} | {image:description}
+        </div>
+        {/exp:channel_images:images}
+        </div>
+        <br class="clear" />
+        
+        <!--display text content-->
+       
+        	<div class="posted">	
+	Posted by {author} on {entry_date format='%m/%d/%y'} at {entry_date format='%h:%i %a'}
+	<br>	
+	<a href="{title_permalink='blog/entry/'}">Permalink</a>		
+	</div><!--/posted-->
+      
+      
+      
+      
+      {/exp:channel:entries}
+	
+		</div>
+			
+		</div>

@@ -1,0 +1,26 @@
+     {exp:freeform:form
+     form:class="mfp-hide white-popup-block form-penworks-contact"
+     form_name="contact"
+     form:id="test-form"
+     required="name|email"
+     notify="info@penworks.net"
+     return="/main/thankyou"}
+          
+     <fieldset class="right">   
+       <h3>Submit your query</h3>
+     
+     <ul>  
+     <form action="" method="POST" enctype="application/x-www-form-urlencoded">
+     
+     
+     <li> <label for="First Name">First Name</label><input type="text" name="first_name" value="" maxlength="40"  min="" max="" accept=""/></li>
+     <li> <label for="Last Name">Last Name</label><input type="text" name="last_name" value=""  maxlength="40"  min="" max="" accept=""/></li>
+     <li> <label for="Email">Email</label><input type="text" name="email" value=""  maxlength="40"  min="" max="" accept=""/></li>
+     <li> <label for="User Message">Your Message</label><textarea name="user_message" wrap="SOFT" style="width:250px !important"></textarea></li>
+     <li><input type="submit"/> <input type="reset"/></li>
+     <!--<input type="hidden" redirect="/thankyou" />-->
+     </form>
+     </ul>
+     
+     </fieldset>
+     {/exp:freeform:form}
