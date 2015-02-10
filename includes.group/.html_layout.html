@@ -46,23 +46,16 @@
 
 	<!-- CSS
   ================================================== -->
-	<!--<link rel="stylesheet" href="{skel_css}boilerplate/stylesheets/base.css">
-            <link rel="stylesheet" href="{skel_css}boilerplate/stylesheets/skeleton.css">
-            <link rel="stylesheet" href="{skel_css}boilerplate/stylesheets/layout.css">-->
          
-        <!-- BOILERPLATE CSS concat of all Skeleton CSS -->    
+        <!-- GRUNT BOILERPLATE CSS concat of all Skeleton CSS -->    
             <link rel="stylesheet" href="{skel_css}build/boilerplate.css">
-		
-	<!-- PENWORKS CSS	
-  ================================================== -->
-	<!--<link rel="stylesheet" href="{skel_css}mainstyles.css">-->
         
-        <!-- GRUNT minified mainstyles, font-awesome & vendor css
-  ================================================== -->
+        <!-- GRUNT minified (pwks) mainstyles.scss, font-awesome.scss & vendor css -->
           <link rel="stylesheet" href="{skel_css}build/global.min.css">  
-            
-          {!-- {embed="includes/.vendor-css"}--}
 
+	<!-- IE JS HTML5 SHIM
+  ================================================== -->
+  
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -106,24 +99,17 @@
 <!--  <li class="icon-gallery"><a href="{path=gallery}">Photography</a></li>-->
 </ul>
 </nav>
-                        
-                        
-                        
-                       </div>{!--/holder--}
+  
+                       </div><!--/holder-->
 			
-                        
-                   
-                   
-			
-		</div>{!--/sixteen columns container remove-all-margins--}
+		
+		</div><!--/sixteen columns container remove-all-margins-->
 			
 </header>
 
 			
-	<div class="container">
-
-        
-        
+    <div class="container">
+    
 
      <!-- Content!
 ================================================== -->
@@ -141,7 +127,7 @@
                     
                 <p class="footer-links">Pen Lister {letters} - {skype} | <a href="{twitter}">on Twitter</a> | <a href="{facebook_penworks}">on Facebook</a>  |  <a href="{linkedin}">on LinkedIn</a> &copy; 2015 {companyname}</p>
                         
-               <p class="footer-links"><em>This site is built using <a href="http://ellislab.com">ExpressionEngine &reg;</a>, <a href="http://getskeleton.com/">Skeleton</a>, <a href="http://diveintohtml5.info/">HTML5</a>, a little <a href="http://www.integralist.co.uk/posts/sass.html">Sassy CSS</a>, <a href="http://jquery.com/">jQuery</a>, and is nicely <a href="http://en.wikipedia.org/wiki/Responsive_web_design">responsive</a>, for all <a href="http://browsehappy.com/">modern browsers</a>. No Adobe products were used in the making of this site &#9786;</em>. Special thanks to <a href="http://www.blue-dreamer.co.uk">Blue Dreamer</a> and <a href="http://paulstamatiou.com/">Stammy</a> for inspiration and a ton of knowledge.     </p>
+               <p class="footer-links"><em>This site is built using <a href="http://ellislab.com">ExpressionEngine &reg;</a>, <a href="http://getskeleton.com/">Skeleton</a>, <a href="http://gruntjs.com/">Grunt</a>, <a href="http://diveintohtml5.info/">HTML5</a>, a little <a href="http://www.integralist.co.uk/posts/sass.html">Sassy CSS</a>, <a href="http://jquery.com/">jQuery</a>, and is nicely <a href="http://en.wikipedia.org/wiki/Responsive_web_design">responsive</a>, for all <a href="http://browsehappy.com/">modern browsers</a>. No Adobe products were used in the making of this site &#9786;</em>. Special thanks to <a href="http://www.blue-dreamer.co.uk">Blue Dreamer</a> and <a href="http://paulstamatiou.com/">Stammy</a> for inspiration and a ton of knowledge.     </p>
                             
             </footer>
 
@@ -158,12 +144,11 @@
 	<!-- LOAD CDN JQUERY	
   ================================================== -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-   
+        
+        <!-- GRUNT concat & uglified (pwks init scripts) global.js, all vendor js
+  ================================================== -->  
         <script type="text/javascript" src="{skel_js}build/production.min.js"></script>
-       <!-- <script type="text/javascript" src="{skel_js}masonry.pkgd.min.js"></script>
-               <script type="text/javascript" src="{skel_js}jquery.easing.min.js"></script>
-               <script type="text/javascript" src="{skel_js}jquery.magnific.min.js"></script>
-               <script type='text/javascript' src='{skel_js}jquery-embedagram.pack.js'></script>-->
+
 
 
 
