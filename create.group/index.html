@@ -22,7 +22,7 @@
 			<div class="eight columns item">
 				<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>	
 				{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
-				<i class="fa fa-bookmark fa-2x featured"></i><img src="{image:url:medium}" title="#{image:title}" class="item-img"/>
+				<i class="fa fa-bookmark fa-2x featured"></i><a href="{channel_url}entry/{url_title}" class="no-border"><img src="{image:url:medium}" title="#{image:title}" class="item-img"/></a>
 				{/exp:channel_images:images}
 				{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=create/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{create_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
 			</div><!--/.eight columns-->
@@ -34,7 +34,7 @@
 			<div class="eight columns item">	
 				<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>
 				{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
-				<img src="{image:url:small-rec}" title="#{image:title}" class="item-img" />
+				<a href="{channel_url}entry/{url_title}" class="no-border"><img src="{image:url:small-rec}" title="#{image:title}" class="item-img" /></a>
 				{/exp:channel_images:images}
 				{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=create/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{create_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
 			</div><!--/.eight columns-->

@@ -24,7 +24,7 @@
 			<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>	
 			
 			{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
-			<i class="fa fa-bookmark fa-2x featured"></i><img src="{image:url:medium}" />
+			<i class="fa fa-bookmark fa-2x featured"></i><a href="{channel_url}entry/{url_title}" class="no-border"><img src="{image:url:medium}" /></a>
 			{/exp:channel_images:images}
 			{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=blog/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{blog_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
 		</div><!--/.eight columns-->
@@ -38,7 +38,7 @@
 			<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>
 			
 			{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
-			<img src="{image:url:small-rec}" title="#{image:id}" /> 	
+			<a href="{channel_url}entry/{url_title}" class="no-border"><img src="{image:url:small-rec}" title="#{image:id}" /></a> 	
 			{/exp:channel_images:images}
 			{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=skills/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{blog_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
 		</div><!--/.eight columns-->

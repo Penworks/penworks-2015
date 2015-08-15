@@ -62,10 +62,10 @@ module.exports = function(grunt) {
     
         watch: {
         scripts: {
-            files: ['assets/js/*.js','assets/styles/*.css', 'assets/styles/sass/*.scss' ],
+            files: ['assets/js/*.js', 'assets/styles/vendor/*.css', 'assets/styles/*.css', 'assets/styles/sass/*.scss' ],
             tasks: ['concat', 'sass', 'cssmin', 'uglify'],
             options: {
-                spawn: false,
+                spawn: true,//edited from false due to (FSEvents.framework) FSEventStreamFlushSync(): failed assertion '(SInt64)last_id > 0LL' error
             },
         }, 
     },             
@@ -86,12 +86,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-font-awesome-vars');
+   // grunt.loadNpmTasks('grunt-font-awesome-vars');
 
 
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
 
-    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'sass', 'cssmin', 'fontAwesomeVars', 'watch']);
+    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'sass', 'cssmin', /*'fontAwesomeVars',*/ 'watch']);
 
 };

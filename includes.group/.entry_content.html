@@ -102,6 +102,8 @@
         <!--display text content-->
         <br class="clear" />
 	<p>{work_content}</p>
+        
+        <div class="videoWrapper">{embed_work_item}</div>
 	
 
         <div class="popup-gallery image-gal">
@@ -129,6 +131,15 @@
         <!--display text content-->
         <br class="clear" />
 	<p>{work_content}</p>
+        
+        {if embed_work_item}
+        <!--display any embed slides etc content-->
+        <br class="clear" />
+        {embed_work_item}
+        <div class="" style="max-width:300px;max-height:220px;display:inline-block;font-size:80%;margin:20px;">{embed_work_item:embed_1}
+         </div>
+         {/embed_work_item} 
+         {/if}
         
         <div class="popup-gallery image-gal">
         {exp:channel_images:images entry_id="{entry_id}"}       {if image:count > "1"}

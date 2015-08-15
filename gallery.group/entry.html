@@ -1,0 +1,45 @@
+{layout="includes/.html_layout"}
+
+     <!-- Entry - Gallery Magnific
+================================================== -->
+<div class="sixteen columns top-margin">
+  
+  
+  {exp:channel:entries channel="gallery" limit="1" disable="member_data|trackbacks"}		
+    	<div class="fifteen columns offset-by-one">
+              
+	<h2 class="title">{title}</h2>
+        
+      {exp:channel_images:images entry_id="{entry_id}" cover_only="yes"}
+        <img src="{image:url:medium}" title="{image:title}" alt="{image:description}" />
+	{/exp:channel_images:images}
+	<p>{gallery_content}</p>
+  
+  <div class="popup-gallery image-gal">
+     
+      {exp:channel_images:images entry_id="{entry_id}"}     
+        <a href="{image:url:very-large}" title="{image:title}" alt="{image:description}"><img src="{image:url:small}" title="{image:title}" alt="{image:description}" class="image-gal-img" /></a>
+      {/exp:channel_images:images}
+                   
+       </div>
+  
+  
+ 	<div class="posted">	
+	Posted by {author} on {entry_date format='%m/%d/%y'} at {entry_date format='%h:%i %a'}
+	<br>
+	{categories}
+	<a href="{path='create/'}">{category_name}</a> &#8226;
+	{/categories}	
+	<a href="{title_permalink='create/entry/'}">Permalink</a>		
+	</div><!--/posted-->
+        
+{/exp:channel:entries}
+		
+	<div class="paginate-entry">
+	&larr; <a href="{path=gallery}">Back to Galleries</a>{exp:channel:prev_entry channel="gallery" backspace="1"} | Previous: <a href="{path=gallery/entry}">{title}</a> {/exp:channel:prev_entry} {exp:channel:next_entry channel="gallery" backspace=""} | Next: <a href="{path=gallery/entry}">{title}</a> &rarr; {/exp:channel:next_entry}
+	</div><!--/paginate-entry-->
+        
+	
+	</div><!--/fifteen columns offset-by-one-->
+
+</div><!--/sixteen columns top-margin-->

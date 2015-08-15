@@ -42,7 +42,7 @@ aside[role="complimentary"] {
 ========================================== */
 
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic|News+Cycle:400,700|Khand:400,700|Oswald:400,700);
-@import "/Library/Ruby/Gems/2.0.0/gems/font-awesome-sass-4.2.2/assets/stylesheets/font-awesome.scss";
+@import "/Library/Ruby/Gems/2.0.0/gems/font-awesome-sass-4.3.2.1/assets/stylesheets/font-awesome.scss";
 
 //@import '_partial';
 
@@ -451,6 +451,13 @@ nav#menu {
     color:rgb(242, 221, 195);
 }
 
+.menu-wide li.icon-gallery i.fa.fa-th{ 
+    background-position:0px 0px;
+    font-size: 26px;
+    text-align: center;
+    color:rgb(242, 221, 195);
+}
+
 .menu-wide li.icon-work i.fa.fa-cubes{ 
     background-position:0px 0px;
     font-size: 26px;
@@ -598,7 +605,7 @@ iframe, embed, object {
     margin: 0 8px 0 7px !important;
     position: relative;
   }
-  
+   
 /*div#masonry-box > div.item:first-child{
 .item-img {
     width: 450px;
@@ -612,6 +619,10 @@ iframe, embed, object {
     border-bottom:$leaf-dotted-border;
     padding-top:0px;
     color: rgb(61,83,25);
+}
+
+.item a.no-border{
+    border:none !important;
 }
 
 .item a:hover {
@@ -752,8 +763,9 @@ form.form-penworks-contact .btn a:hover{
 
 .robotcatcher {
   display: block !important;
-  left: -9999px !important;
-  position: absolute !important;
+  width:0;
+  height:0;
+  overflow:hidden;
 }
 
 //    ////////   MEDIA QUERIES      ////////
@@ -835,7 +847,7 @@ form.form-penworks-contact .btn a:hover{
         
 
         @media only screen and (max-width: 479px) {
-            
+
             header .container{
                 width:330px !important;
             }
@@ -847,7 +859,26 @@ form.form-penworks-contact .btn a:hover{
             .menu > .menu-wide > ul li {
                 width:100%;
             }
+            
+        @media only screen and (max-width: 320px) {
+            header .container{
+                width:300px !important;
+            }
 
+           .menu-wide > li.icon-creative,.menu-wide li.icon-work,.menu-wide li.icon-skills,.menu-wide li.icon-blog{
+                width:100% !important;
+            }
+            
+            .menu > .menu-wide > ul li {
+                width:100%;
+            }
+
+           h5 { font: 14px 'Khand', sans-serif !important;}
+        }
+            
+            
+            
+            
         }
 
 /*

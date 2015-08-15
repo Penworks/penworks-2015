@@ -1,0 +1,59 @@
+{layout="includes/.html_layout"}
+
+     <!-- Gallery List 
+================================================== -->
+
+	<div class="sixteen columns top-margin">		
+			<h2 class="remove-bottom">Creative Projects</h2>
+			<h5>Working on things I don't always get paid for ;)</h5>
+			<hr />
+	</div><!--/.sixteen column-->		
+
+
+	
+	
+	
+	<div id="masonry-box">
+		
+		{exp:channel:entries channel="gallery" limit="6" disable="member_data|trackbacks" sort="desc" dynamic="yes" paginate="bottom" orderby="date" paginate_base="gallery/list"}
+		
+		<div class="eight columns item">	
+			<h3><a href="{channel_url}entry/{url_title}">{title}</a></h3>
+			
+			{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
+			<img src="{image:url:small-rec}" title="#{image:title}" class="item-img" /> 	
+			{/exp:channel_images:images}
+			{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=gallery/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{gallery_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+		</div><!--/.eight columns-->
+		
+	
+{!--	{paginate}
+	<div class="pagination readmore">
+	
+
+		{pagination_links}
+			{previous_page}
+				<a href="{pagination_url}" class="newer">load less</a>
+			{/previous_page}
+			
+			{next_page}
+				<a href="{pagination_url}" class="older">load more</a>
+				{/next_page}
+		{/pagination_links}
+	</div>
+	{/paginate}--}	
+	
+{if total_results <= '1'}
+{paginate}
+<div class="pagination readmore">Page {current_page} of {total_pages}  
+<span class="custom-counter">{pagination_links}</span></div>
+{/paginate}
+{/if}
+	
+	{/exp:channel:entries}
+	
+	
+	</div><!--/#masonry-box-->
+	
+	
+

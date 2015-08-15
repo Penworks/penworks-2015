@@ -1,53 +1,72 @@
 {layout="includes/.html_layout"}
 
-     <!-- Gallery
+     <!-- Gallery INDEX List
 ================================================== -->
-<div class="sixteen columns top-margin">
-  
-  
-<script type="text/javascript">
-			jQuery(function($){
-								$.supersized({
-						
-			// Functionality
-			start_slide             :   0, // Start slide (0 is random)
-			new_window		:   1,	// Image links open in new window/tab
-			image_protect		:   1,	// Disables image dragging and right click with Javascript
-			// Size & Position						   
-			min_width		:   0,	// Min width allowed (in pixels)
-			min_height		:   0,	// Min height allowed (in pixels)
-			vertical_center         :   1,	// Vertically center background
-			horizontal_center       :   1,	// Horizontally center background
-			fit_always		:    0,	// Image will never exceed browser width or height (Ignores min. dimensions)
-			fit_portrait         	:   0,	// Portrait images will not exceed browser height
-			fit_landscape		:   0,	// Landscape images will not exceed browser width
-			thumb_links 		:    1, //thumblink
-			thumbnail_navigation	:    0,
-			// Slidey
-			autoplay		:   0,
-			slide_interval          :   10000,		// Length between transitions
-			transition              :   1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-			transition_speed	:	700,		// Speed of transition
-			slide_links		:	'blank',											   
-			// Components
+
+	<div class="sixteen columns top-margin">		
+			<h2 class="remove-bottom">Photo Galleries</h2>
+			<h5>I take photos, using a variety of cameras: Lumix GF3, Lumix SM7, various phones, Canon. </h5>
+			<hr />
+	</div><!--/.sixteen column-->		
+
+	
+
+	
+	<div id="masonry-box">
+		
+	 {exp:channel:entries channel="gallery" limit="6" disable="member_data|trackbacks" sort="desc" dynamic="yes" paginate="bottom" orderby="date"}
+	
+		{if featured_gallery_item}
+            
+			{featured_gallery_item}
+			<div class="eight columns item">
+				<h3><a href="{title_permalink=gallery/entry}">{title}</a></h3>	
+				{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
+				<i class="fa fa-bookmark fa-2x featured"></i><a href="{title_permalink=gallery/entry}" class="no-border"><img src="{image:url:medium}" title="#{image:title}" class="item-img"/></a>
+				{/exp:channel_images:images}
+				{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=gallery/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{gallery_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+			</div><!--/.eight columns-->
+			{/featured_gallery_item}
+
+		
+		{if:else}			
+							
+			<div class="eight columns item">	
+				<h3><a href="{title_permalink=gallery/entry}">{title}</a></h3>
+				{exp:channel_images:images entry_id="{entry_id}" limit="1"}     
+				<a href="{title_permalink=gallery/entry}" class="no-border"><img src="{image:url:small-rec}" title="#{image:title}" class="item-img" /></a>
+				{/exp:channel_images:images}
+				{exp:trunchtml chars="200" inline="..." ending="<p class='readmore'><a href='{title_permalink=gallery/entry}'>Read more</a> &rarr;</p>"}{exp:tagstripper:tagsToStrip tags="img"}{gallery_content}{/exp:tagstripper:tagsToStrip}{/exp:trunchtml}
+			</div><!--/.eight columns-->
+		
+		
+		{/if}
+		
+		{if total_results <= '1'}
+						{paginate}
+						<div class="pagination"> Page {current_page} of {total_pages} <i class="fa fa-arrows-h"></i>  <span class="custom-counter">{pagination_links}</span></div>
+						{/paginate}
+		{/if}
+			
+		{!--	{if total_results <= '1'}
+					{paginate}
+					<div class="pagination"><i class="fa fa-file-text-o"></i> {pagination_links}
+					{page}
+		      <ul class="custom-counter">  <li><a href="{pagination_url}" class="page-{pagination_page_number} {if current_page}active{/if}">{pagination_page_number}</a></li>
+		      {/page}{/pagination_links}
+					
+					</ul></div>
+					{/paginate}
+					{/if}--}
+			
+			  
 			
 			
-			slides  :
-			[
-						{embed="includes/.img_baks"}
 			
-					 
-			 ]
-				});
-		    });
-			</script>
+			
+	
+		{/exp:channel:entries}
 
-
-
-{embed="includes/.slidenav"}
-
-</div><!--/.sixteen columns-->
-
-       <script type="text/javascript" src="{skel_js}supersized.3.2.7.min.js"></script>
-        <script type="text/javascript" src="{skel_js}supersized.shutter.js"></script>
- 
+</div><!--/#masonry-box-->
+	
+                       
